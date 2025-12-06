@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Casa Simón | Paellas a la leña y Comida para llevar en Elche</title>
+    <meta name="description" content="Restaurante y tiendas de comida para llevar en Elche. Paellas a la leña, asados y cocina casera diaria.">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif'],
+                    },
+                    colors: {
+                        gold: {
+                            500: '#D4AF37', // Dorado Premium
+                            600: '#B59226',
+                        },
+                        dark: {
+                            900: '#050505', // Negro Profundo
+                            800: '#121212', // Gris muy oscuro (tarjetas)
+                            700: '#1c1c1c'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Ajustes UI */
+        #mobileMenu { transition: transform 0.3s ease-in-out; }
+        .open { transform: translateX(0) !important; }
+        ::selection { background-color: #D4AF37; color: #000; }
+        
+        /* Filtro para el mapa (Modo oscuro) */
+        .map-dark { filter: grayscale(100%) invert(90%) contrast(85%); }
+        .map-dark:hover { filter: none; }
+    </style>
+</head>
+
+<body class="bg-dark-900 text-white font-sans antialiased">
+
+    <header class="fixed top-0 left-0 w-full bg-dark-900/95 backdrop-blur-md border-b border-white/5 z-50 transition-all duration-300">
+        <nav class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+            <a href="/" class="text-2xl font-serif font-bold tracking-tight text-white group">
+                Casa <span class="text-gold-500 italic group-hover:text-white transition-colors">Simón</span>
+            </a>
+
+            <ul class="hidden md:flex items-center gap-8 font-medium text-xs uppercase tracking-[0.15em] text-gray-400">
+                <li><a href="#" class="hover:text-gold-500 transition-colors">Inicio</a></li>
+                <li><a href="#nosotros" class="hover:text-gold-500 transition-colors">Filosofía</a></li>
+                
+                <li>
+                    <a href="comida-para-llevar.html" class="text-white hover:text-gold-500 transition-colors flex items-center gap-2">
+                        <span class="text-gold-500 text-lg">•</span> Para llevar (Carta)
+                    </a>
+                </li>
+                
+                <li><a href="#menu" class="hover:text-gold-500 transition-colors">Carta</a></li>
+                
+                <li>
+                    <a href="#contacto" class="border border-gold-500 text-gold-500 px-6 py-2 hover:bg-gold-500 hover:text-black transition-all duration-300">
+                        Restaurante
+                    </a>
+                </li>
+            </ul>
+
+            <button id="menuBtn" class="md:hidden text-2xl text-gold-500 focus:outline-none">☰</button>
+        </nav>
+    </header>
+
+    <div id="mobileMenu" class="fixed inset-0 bg-black z-40 transform translate-x-full flex flex-col items-center justify-center space-y-8 text-xl font-serif md:hidden">
+        <button id="closeMenuBtn" class="absolute top-6 right-6 text-gold-500 text-4xl">×</button>
+        <a href="#" class="text-white hover:text-gold-500" onclick="closeMenu()">Inicio</a>
+        <a href="#nosotros" class="text-white hover:text-gold-500" onclick="closeMenu()">Filosofía</a>
+        <a href="#tiendas" class="text-gold-500 font-bold" onclick="closeMenu()">Ver Tiendas (Para llevar)</a>
+        <a href="#menu" class="text-white hover:text-gold-500" onclick="closeMenu()">La Carta</a>
+        <a href="#contacto" class="text-white hover:text-gold-500" onclick="closeMenu()">Contacto Restaurante</a>
+    </div>
+
+    <section class="relative h-screen flex items-center justify-center bg-black overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1590799279766-8848d7010468?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" 
+                 alt="Fuego y brasa" 
+                 class="w-full h-full object-cover opacity-50 grayscale-[20%]">
+            <div class="absolute inset-0 bg-gradient-to-t from-dark-900 via-dark-900/40 to-black/60"></div>
+        </div>
+
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto mt-10">
+            <span class="text-gold-500 font-medium tracking-[0.4em] uppercase text-xs md:text-sm mb-6 block">
+                Tradición Ilicitana desde 1982
+            </span>
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-serif font-bold leading-none mb-8 text-white">
+                Maestros del <br/> <span class="italic text-gold-500">Fuego</span>
+            </h1>
+            <p class="text-lg text-gray-300 mb-10 font-light max-w-xl mx-auto">
+                Arroces a la leña, carnes premium y cocina casera.<br>
+                Disfruta en nuestro restaurante o recógelo en nuestras tiendas.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-5 justify-center">
+                <a href="comida-para-llevar.html" class="bg-gold-500 text-black px-8 py-3 font-bold uppercase tracking-wider hover:bg-white transition-colors duration-300">
+                    Ver Carta para llevar
+                </a>
+                
+                <a href="#contacto" class="border border-white ...">
+                    Reservar Mesa
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="nosotros" class="py-24 px-6 max-w-6xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+            <div class="relative order-2 md:order-1">
+                <div class="absolute -top-4 -left-4 w-full h-full border border-gold-500/20 z-0"></div>
+                <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                     alt="Detalle comida" 
+                     class="relative z-10 w-full object-cover h-[500px] grayscale-[20%] contrast-125 shadow-2xl shadow-black">
+            </div>
+            
+            <div class="order-1 md:order-2">
+                <h2 class="text-gold-500 font-medium tracking-widest uppercase text-xs mb-4">Nuestra Esencia</h2>
+                <h3 class="text-4xl md:text-5xl font-serif font-medium text-white mb-8 leading-tight">
+                    Cocina de origen,<br>sin prisas.
+                </h3>
+                <p class="text-gray-400 mb-6 leading-relaxed font-light text-lg">
+                    En Casa Simón, el lujo es el tiempo y el producto. Cocinamos a fuego lento, usando sarmientos para nuestras paellas y brasas de calidad para nuestras carnes.
+                </p>
+                <ul class="space-y-4 text-gray-300 mt-8">
+                    <li class="flex items-center gap-3">
+                        <span class="text-gold-500 text-xl">✦</span> Calidad Gourmet en cada plato
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <span class="text-gold-500 text-xl">✦</span> Arroces con D.O. Valencia
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <span class="text-gold-500 text-xl">✦</span> Dos tiendas para estar cerca de ti
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="tiendas" class="py-24 bg-dark-800 relative border-t border-white/5">
+        <div class="max-w-6xl mx-auto px-6">
+            
+            <div class="text-center mb-16">
+                <span class="text-gold-500 uppercase tracking-widest text-xs font-bold">Comida Casera Diaria</span>
+                <h2 class="text-4xl md:text-5xl font-serif text-white mt-4 mb-4">Nuestras Tiendas</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto font-light">
+                    La calidad de Casa Simón lista para llevar a tu mesa. <br>
+                    Elige tu local más cercano y disfruta.
+                </p>
+            </div>
+    
+            <div class="grid md:grid-cols-2 gap-8">
+                
+                <div class="group relative bg-dark-900 border border-white/10 hover:border-gold-500 transition-all duration-500 p-8 md:p-10 shadow-lg">
+                    <div class="absolute top-0 right-0 bg-gold-500 text-black text-xs font-bold px-4 py-1 uppercase tracking-wider">
+                        Zona Centro
+                    </div>
+    
+                    <h3 class="text-2xl font-serif font-bold text-white mb-2">Tienda Calle Mayor</h3>
+                    <p class="text-gray-500 text-sm mb-6">Especialidad en arroces, pollos asados y tapas frías.</p>
+    
+                    <div class="space-y-4 mb-8 border-t border-white/5 pt-6">
+                        <div class="flex items-start gap-4">
+                            <span class="text-gold-500">📍</span>
+                            <div>
+                                <p class="text-white text-xs font-bold uppercase">Dirección</p>
+                                <p class="text-gray-400 text-sm">C/ Mayor, 45, Elche</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <span class="text-gold-500">📞</span>
+                            <div>
+                                <p class="text-white text-xs font-bold uppercase">Teléfono</p>
+                                <a href="tel:+34966111111" class="text-gray-400 text-sm hover:text-white transition-colors">+34 966 111 111</a>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="grid grid-cols-2 gap-4">
+                        <a href="https://goo.gl/maps/example1" target="_blank" class="flex items-center justify-center gap-2 border border-white/20 text-white py-3 text-xs uppercase tracking-widest hover:bg-white hover:text-black transition-colors">
+                            Ver Mapa
+                        </a>
+                        <a href="tel:+34966111111" class="flex items-center justify-center gap-2 bg-gold-500 text-black py-3 text-xs font-bold uppercase tracking-widest hover:bg-white transition-colors">
+                            Llamar
+                        </a>
+                    </div>
+                </div>
+    
+                <div class="group relative bg-dark-900 border border-white/10 hover:border-gold-500 transition-all duration-500 p-8 md:p-10 shadow-lg">
+                    <div class="absolute top-0 right-0 bg-gray-700 text-white text-xs font-bold px-4 py-1 uppercase tracking-wider group-hover:bg-gold-500 group-hover:text-black transition-colors">
+                        Zona Altabix
+                    </div>
+    
+                    <h3 class="text-2xl font-serif font-bold text-white mb-2">Tienda Altabix</h3>
+                    <p class="text-gray-500 text-sm mb-6">Platos de cuchara, ensaladas frescas y postres.</p>
+    
+                    <div class="space-y-4 mb-8 border-t border-white/5 pt-6">
+                        <div class="flex items-start gap-4">
+                            <span class="text-gold-500">📍</span>
+                            <div>
+                                <p class="text-white text-xs font-bold uppercase">Dirección</p>
+                                <p class="text-gray-400 text-sm">Av. Alicante, 120, Elche</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <span class="text-gold-500">📞</span>
+                            <div>
+                                <p class="text-white text-xs font-bold uppercase">Teléfono</p>
+                                <a href="tel:+34966222222" class="text-gray-400 text-sm hover:text-white transition-colors">+34 966 222 222</a>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="grid grid-cols-2 gap-4">
+                        <a href="https://goo.gl/maps/example2" target="_blank" class="flex items-center justify-center gap-2 border border-white/20 text-white py-3 text-xs uppercase tracking-widest hover:bg-white hover:text-black transition-colors">
+                            Ver Mapa
+                        </a>
+                        <a href="tel:+34966222222" class="flex items-center justify-center gap-2 bg-gold-500 text-black py-3 text-xs font-bold uppercase tracking-widest hover:bg-white transition-colors">
+                            Llamar
+                        </a>
+                    </div>
+                </div>
+    
+            </div>
+            
+            <div class="mt-12 text-center">
+                <a href="comida-para-llevar.html" class="inline-block text-gold-500 text-xs font-bold uppercase tracking-widest border-b border-gold-500 pb-1 hover:text-white hover:border-white transition-colors">
+                    Ver Carta Completa Online →
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="menu" class="py-24 bg-dark-900 relative">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-gold-500 uppercase tracking-widest text-xs">Nuestra Carta</span>
+                <h2 class="text-4xl font-serif text-white mt-3">Especialidades</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="group bg-dark-800 border border-white/5 hover:border-gold-500/50 transition-all duration-500 p-8 text-center relative overflow-hidden">
+                    <div class="text-4xl mb-6">🥘</div>
+                    <h3 class="text-xl font-serif font-bold text-white mb-3">Arroces</h3>
+                    <p class="text-gray-400 font-light text-sm mb-6">Paella de conejo y caracoles, a banda, negro y costra.</p>
+                </div>
+                <div class="group bg-dark-800 border border-white/5 hover:border-gold-500/50 transition-all duration-500 p-8 text-center relative overflow-hidden">
+                    <div class="text-4xl mb-6">🍖</div>
+                    <h3 class="text-xl font-serif font-bold text-white mb-3">Brasas</h3>
+                    <p class="text-gray-400 font-light text-sm mb-6">Chuletón de vaca vieja, costillar, cordero y embutidos.</p>
+                </div>
+                <div class="group bg-dark-800 border border-white/5 hover:border-gold-500/50 transition-all duration-500 p-8 text-center relative overflow-hidden">
+                    <div class="text-4xl mb-6">🥣</div>
+                    <h3 class="text-xl font-serif font-bold text-white mb-3">Caseros</h3>
+                    <p class="text-gray-400 font-light text-sm mb-6">Guisos, lasañas, croquetas y postres tradicionales.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="py-24 px-6 max-w-5xl mx-auto">
+        <div class="bg-dark-800 border border-white/10 flex flex-col md:flex-row shadow-2xl shadow-black">
+            <div class="p-12 md:w-1/2 flex flex-col justify-center">
+                <p class="text-gold-500 text-xs uppercase tracking-widest mb-2">Restaurante Principal</p>
+                <h2 class="text-3xl font-serif text-white mb-8">Reservas y Eventos</h2>
+                
+                <div class="space-y-8">
+                    <div>
+                        <p class="text-gray-500 text-xs uppercase tracking-widest mb-1">Ubicación Restaurante</p>
+                        <p class="text-gray-300">Calle Ejemplo nº12, Elche</p>
+                    </div>
+                    
+                    <div>
+                        <p class="text-gray-500 text-xs uppercase tracking-widest mb-1">Teléfono</p>
+                        <a href="tel:+34966000000" class="text-2xl font-serif text-white hover:text-gold-500 transition-colors">+34 966 000 000</a>
+                    </div>
+
+                    <div>
+                        <p class="text-gray-500 text-xs uppercase tracking-widest mb-1">Horario Salón</p>
+                        <p class="text-gray-300">Mar – Dom: 13:00 – 16:30</p>
+                    </div>
+                </div>
+
+                <a href="https://wa.me/34XXXXXXXXX" class="mt-10 flex items-center justify-center gap-3 bg-green-900/20 border border-green-600/50 text-green-400 py-4 hover:bg-green-600 hover:text-white transition-all duration-300">
+                    Enviar WhatsApp
+                </a>
+            </div>
+
+            <div class="md:w-1/2 min-h-[400px] bg-dark-900 relative overflow-hidden">
+                 <iframe 
+                    class="w-full h-full map-dark transition-all duration-700"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3133.0!2d-0.69!3d38.26!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd63b65!2sElche!5e0!3m2!1ses!2ses!4v1600000000000"
+                    loading="lazy"
+                    style="border:0;"
+                    allowfullscreen="">
+                </iframe>
+                <div class="absolute top-0 right-0 p-4 pointer-events-none">
+                    <span class="bg-black/80 text-white text-xs px-2 py-1">📍 Restaurante</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-black text-gray-500 py-12 border-t border-white/5 text-center text-xs tracking-widest uppercase">
+        <p class="mb-4 text-white font-serif text-lg normal-case tracking-normal">Casa Simón</p>
+        <p>© 2025 Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById("menuBtn");
+        const closeMenuBtn = document.getElementById("closeMenuBtn");
+        const mobileMenu = document.getElementById("mobileMenu");
+
+        function openMenu() { mobileMenu.classList.add("open"); }
+        function closeMenu() { mobileMenu.classList.remove("open"); }
+
+        menuBtn.addEventListener("click", openMenu);
+        closeMenuBtn.addEventListener("click", closeMenu);
+    </script>
+</body>
+</html>
