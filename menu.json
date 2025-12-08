@@ -1,64 +1,111 @@
 {
   "categorias": [
     {
+      "id": "ensaladas",
+      "nombre": "Ensaladas",
+      "platos": [
+        { "nombre": "De verano", "precio": 5.50, "precio_medio": 3.00 },
+        { "nombre": "Murciana", "precio": 5.50, "precio_medio": 3.00 },
+        { "nombre": "Pasta", "precio": 5.50, "precio_medio": 3.00 },
+        { "nombre": "Ensalada de patata", "precio": 5.50, "precio_medio": 3.00 },
+        { "nombre": "Mixta pequeña", "precio": 5.50 },
+        { "nombre": "Mixta grande", "precio": 9.00 },
+        { "nombre": "César pequeña", "precio": 5.50 },
+        { "nombre": "César grande", "precio": 9.00 },
+        { "nombre": "Tomate y capellán", "precio": 6.00 },
+        { "nombre": "Gazpacho andaluz", "precio": 5.50 },
+        { "nombre": "Rusa", "precio": 4.00 },
+        { "nombre": "Boca", "precio": 4.00 },
+        { "nombre": "Patata con ajo", "precio": 4.00 },
+        { "nombre": "Tabulé", "precio": 5.50 }
+      ]
+    },
+    {
+      "id": "pastas",
+      "nombre": "Pastas y Arroces",
+      "platos": [
+        { "nombre": "Canelones de carne", "precio": 5.50 },
+        { "nombre": "Canelones de espinaca", "precio": 5.50 },
+        { "nombre": "Lasaña de pollo", "precio": 5.50 },
+        { "nombre": "Lasaña de verdura", "precio": 5.50 },
+        { "nombre": "Lasaña de carne", "precio": 5.50 },
+        { "nombre": "Berenjena rellena de carne", "precio": 5.50 },
+        { "nombre": "Berenjena rellena de verdura", "precio": 5.50 },
+        { "nombre": "Spaghetti boloñesa", "precio": 5.50, "precio_medio": 3.00 },
+        { "nombre": "Macarrones boloñesa", "precio": 5.50, "precio_medio": 3.00 },
+        { "nombre": "Spaghetti carbonara", "precio": 5.50, "precio_medio": 3.00 },
+        { "nombre": "Arroz tres delicias", "precio": 5.50, "precio_medio": 3.00 },
+        { "nombre": "Ensalada de arroz", "precio": 5.50, "precio_medio": 3.00 },
+        { "nombre": "Tortellini o ravioli", "precio": 5.50, "precio_medio": 3.00 },
+        { "nombre": "Tallarines teriyaki", "precio": 5.50, "precio_medio": 3.00 }
+      ]
+    },
+    {
+      "id": "caseros",
+      "nombre": "Platos Caseros",
+      "platos": [
+        { "nombre": "Embutidos con pimiento", "precio": 6.00, "precio_medio": 3.00, "nota": "Consultar" },
+        { "nombre": "Sangre con cebolla", "precio": 5.50, "precio_medio": 3.00 },
+        { "nombre": "Hígado con ajos", "precio": 5.50, "precio_medio": 3.00 },
+        { "nombre": "Pollo de campo y conejo con tomate", "precio": 6.00, "precio_medio": 3.50 },
+        { "nombre": "Magra con tomate", "precio": 5.50, "precio_medio": 3.00 },
+        { "nombre": "Albóndigas con verdura", "precio": 5.50, "precio_medio": 3.00 },
+        { "nombre": "Callos", "precio": 5.50 },
+        { "nombre": "Pelotas con caldo y fideos", "precio": 5.50 },
+        { "nombre": "Cocido", "precio": 6.00 },
+        { "nombre": "Gazpacho", "precio": 5.50, "precio_medio": 3.00 },
+        { "nombre": "Lentejas", "precio": 5.50, "precio_medio": 3.00 },
+        { "nombre": "Crema de calabaza", "precio": 5.00 },
+        { "nombre": "Pincho de tortilla de patata", "precio": 3.00 },
+        { "nombre": "Pincho de tortilla de patata y cebolla", "precio": 3.00 }
+      ]
+    },
+    {
       "id": "arroces",
-      "nombre": "Arroces a la Leña",
-      "descripcion": "Elaborados con sarmiento y arroz D.O. Valencia. Precio por ración.",
+      "nombre": "Arroces",
       "platos": [
-        {
-          "nombre": "Paella de Conejo y Caracoles",
-          "ingredientes": "Conejo de campo, caracoles serranos, tomate y azafrán en hebra.",
-          "precio": "14.50"
-        },
-        {
-          "nombre": "Arroz del Senyoret",
-          "ingredientes": "Todo pelado: gamba roja, calamar, mero y caldo de morralla.",
-          "precio": "16.00"
-        },
-        {
-          "nombre": "Costra Ilicitana",
-          "ingredientes": "La joya de Elche. Huevo, embutido blanco y rojo, pollo y conejo.",
-          "precio": "15.00"
-        }
+        { "nombre": "Arroz conejo y caracoles", "precio": 5.50, "precio_medio": 3.00 },
+        { "nombre": "Arroz pollo de campo y garbanzos", "precio": 5.50, "precio_medio": 3.00 },
+        { "nombre": "Arroz de pollo de campo y conejo", "precio": 5.50, "precio_medio": 3.00 },
+        { "nombre": "Arroz de costillar con ajos tiernos", "precio": 5.50, "precio_medio": 3.00 },
+        { "nombre": "Arroz magra y verdura", "precio": 5.50, "precio_medio": 3.00 },
+        { "nombre": "Arroz de verdura", "precio": 5.50, "precio_medio": 3.00 },
+        { "nombre": "Arroz a banda", "precio": 6.00, "precio_medio": 3.50 },
+        { "nombre": "Fideuá", "precio": 6.00, "precio_medio": 3.50 },
+        { "nombre": "Arroz al horno", "precio": 5.50, "precio_medio": 3.00 },
+        { "nombre": "Arroz con costra", "precio": 5.50 }
       ]
     },
     {
-      "id": "brasas",
-      "nombre": "Carnes a la Brasa",
-      "descripcion": "Selección de cortes cocinados al carbón de encina.",
+      "id": "especiales",
+      "nombre": "Especiales y Raciones",
       "platos": [
-        {
-          "nombre": "Chuletón de Vaca Vieja (Kg)",
-          "ingredientes": "Maduración 45 días. Se sirve trinchado.",
-          "precio": "55.00"
-        },
-        {
-          "nombre": "Costillar Ibérico",
-          "ingredientes": "Adobado con especias de la casa y cocción lenta.",
-          "precio": "18.50"
-        },
-        {
-          "nombre": "Pollo Asado Casero",
-          "ingredientes": "Con patatas panadera y nuestra salsa especial.",
-          "precio": "12.00"
-        }
+        { "nombre": "Cordero", "precio": 11.00 },
+        { "nombre": "Embutidos (unidad)", "precio": 0.80 },
+        { "nombre": "Migas", "precio": 5.50 },
+        { "nombre": "Conejo al ajillo", "precio": 5.50 },
+        { "nombre": "Fritura de pescado", "precio": 5.50 },
+        { "nombre": "Queso frito", "precio": 5.50 },
+        { "nombre": "Croquetas de jamón ibérico (unidad)", "precio": 1.20 },
+        { "nombre": "Huevos rotos", "precio": 5.50 },
+        { "nombre": "Rustidera de pollo", "precio": 5.00 }
       ]
     },
     {
-      "id": "entrantes",
-      "nombre": "Entrantes y Caseros",
-      "descripcion": "Para abrir boca o acompañar.",
+      "id": "postres",
+      "nombre": "Postres",
       "platos": [
-        {
-          "nombre": "Croquetas de Jamón",
-          "ingredientes": "Pack de 6 unidades. Bechamel cremosa.",
-          "precio": "8.00"
-        },
-        {
-          "nombre": "Ensalada de la Huerta",
-          "ingredientes": "Tomate rosa, ventresca, cebolla tierna y aceitunas.",
-          "precio": "9.50"
-        }
+        { "nombre": "Tarta tres chocolates", "precio": 3.00 },
+        { "nombre": "Tarta de galleta", "precio": 3.00 },
+        { "nombre": "Tarta de almendra", "precio": 3.00 },
+        { "nombre": "Natillas", "precio": 3.00 },
+        { "nombre": "Chocolate y queso Albert Adrià", "precio": 4.00 },
+        { "nombre": "Tarta de queso Albert Adrià", "precio": 4.00 },
+        { "nombre": "Pan de Calatrava", "precio": 3.00 },
+        { "nombre": "Tarta de Lotus", "precio": 4.00 },
+        { "nombre": "Tarta de pistacho", "precio": 4.00 },
+        { "nombre": "Tarta de Oreo", "precio": 4.00 },
+        { "nombre": "Arroz con leche", "precio": 3.00 }
       ]
     }
   ]
