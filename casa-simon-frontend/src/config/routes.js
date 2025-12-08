@@ -1,6 +1,7 @@
 export const APP_ROUTES = {
     HOME: '/',
-    CARTA: '/carta',
+    CARTA_RESTAURANTE: '/carta-restaurante',
+    CARTA_LLEVAR: '/carta-llevar',
     MAIN_RESTAURANT: "https://maps.app.goo.gl/YNQkjVPUNcEciiMw9",
     MAIN_RESTAURANT_PHONE: "+34 603 42 16 47",
     LOCAL1: "https://maps.app.goo.gl/usUG4Zkwtos5XoUC6?g_st=iw",

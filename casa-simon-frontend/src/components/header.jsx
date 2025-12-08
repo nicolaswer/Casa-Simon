@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'; // <--- Importar esto
 import { APP_ROUTES } from '../config/routes';
 import { FaFacebookF, FaInstagram } from 'react-icons/fa';
 
@@ -9,23 +10,23 @@ function Header() {
         
         <div className="flex items-center space-x-4">
           <div className="flex items-center space-x-3 text-white font-serif text-2xl">
-            <a
-              href={APP_ROUTES.HOME}
+            <
+              Link to={APP_ROUTES.HOME}
               className=" text-white transition duration-150 font-bold"
             >
             Casa
               <span className="text-yellow-400"> Simón</span>
-            </a>
+            </Link>
           </div>
         </div>
 
         <nav className="flex items-center space-x-12 text-white font-semibold tracking-wider">
-          <a
-            href={APP_ROUTES.CARTA}
+          <
+            Link to={APP_ROUTES.CARTA}
             className="text-lg hover:text-yellow-400 transition duration-150 uppercase"
           >
             CARTA
-          </a>
+          </Link>
           <div className="flex items-center space-x-3 text-xl"> 
             <a 
                 href={APP_ROUTES.FACEBOOK} 
