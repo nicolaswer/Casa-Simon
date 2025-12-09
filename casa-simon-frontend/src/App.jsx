@@ -9,7 +9,7 @@ import Menu from './components/Menu';
 import { APP_ROUTES } from './config/routes';
 
 // 1. IMPORTA EL COMPONENTE NUEVO
-import ScrollToTop from './components/ScrollToTop'; 
+import ScrollToTop from './components/BotonSubir'; 
 
 import { parallevarData } from './data/parallevarData'; 
 import { restauranteData } from './data/restauranteData'; 
