@@ -61,142 +61,145 @@ const Menu = ({ data, title, showTaxWarning = false }) => {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white font-sans pb-20">
-      
-      {/* --- HEADER --- */}
-      <div className="fixed top-0 left-0 right-0 z-50 bg-black/95 backdrop-blur-md border-b border-gray-900 shadow-2xl transition-all duration-300">
-        
-        <div className="relative h-24 flex flex-col items-center justify-center px-6 pt-2">
-           <Link 
-              to={APP_ROUTES.HOME} 
-              className="absolute left-4 md:left-8 top-8 flex items-center gap-2 text-xs md:text-sm text-gray-400 hover:text-yellow-400 transition-colors uppercase tracking-widest"
-           >
-            <ArrowLeft size={16} /> Volver
-          </Link>
-          
-          <h1 className="text-xl md:text-3xl font-bold font-serif text-white tracking-widest uppercase text-center mb-1">
-            {title}
-          </h1>
+    <div className="min-h-screen bg-black text-white font-sans pb-20 pt-20">
+      
+      {/* --- CONTENEDOR DE NAVEGACIÓN DE CATEGORÍAS (Fijo, debajo del Header principal) --- */}
+      {/* top-20 coloca este div 80px por debajo del borde superior (justo debajo del Header principal) */}
+      <div className="fixed top-20 left-0 right-0 z-40 bg-black/95 backdrop-blur-md border-b border-gray-900 transition-all duration-300">
+        
+        <div className="relative flex flex-col items-center justify-center px-6 pt-2">
+           {/* ELIMINAMOS EL BOTÓN 'VOLVER' INTERNO YA QUE YA ESTÁ EN EL HEADER PRINCIPAL (Si lo deseas volver a poner, quita los comentarios) */}
+           {/* <Link 
+              to={APP_ROUTES.HOME} 
+              className="absolute left-4 md:left-8 top-8 flex items-center gap-2 text-xs md:text-sm text-gray-400 hover:text-yellow-400 transition-colors uppercase tracking-widest"
+           >
+            <ArrowLeft size={16} /> Volver
+          </Link> */}
+          
+          <h1 className="text-xl md:text-3xl font-bold font-serif text-white tracking-widest uppercase text-center mb-1">
+            {title}
+          </h1>
 
-          {/* CONDICIONAL: Solo mostramos "Precios por Ración" si showTaxWarning es true */}
-          {showTaxWarning && (
-            <p className="text-[10px] md:text-xs text-yellow-400/80 uppercase tracking-widest font-sans font-medium">
-              Precios por Ración
-            </p>
-          )}
-        </div>
+          {/* CONDICIONAL: Precios por Ración */}
+          {showTaxWarning && (
+            <p className="text-[10px] md:text-xs text-yellow-400/80 uppercase tracking-widest font-sans font-medium">
+              Precios por Ración
+            </p>
+          )}
+        </div>
 
-        <div className="w-full border-t border-gray-900 overflow-x-auto no-scrollbar">
-          <div className="flex justify-start md:justify-center px-4 py-3 gap-4 min-w-max">
-            {data.categorias.map((cat) => (
-              <button
-                key={cat.id}
-                onClick={() => scrollToCategory(cat.id)}
-                className={`flex items-center gap-2 px-4 py-2 rounded-sm whitespace-nowrap transition-all duration-300 text-xs md:text-sm font-bold uppercase tracking-wide border ${
-                  activeCategory === cat.id
-                    ? `bg-yellow-400 text-black border-yellow-400 shadow-[0_0_15px_rgba(250,204,21,0.4)]`
-                    : 'bg-transparent text-gray-500 border-transparent hover:text-gray-200'
-                }`}
-              >
-                {getCategoryIcon(cat.id)}
-                {cat.nombre}
-              </button>
-            ))}
-          </div>
-        </div>
-      </div>
+        {/* Botones de Categoría */}
+        <div className="w-full border-t border-gray-900 overflow-x-auto no-scrollbar">
+          <div className="flex justify-start md:justify-center px-4 py-3 gap-4 min-w-max">
+            {data.categorias.map((cat) => (
+              <button
+                key={cat.id}
+                onClick={() => scrollToCategory(cat.id)}
+                className={`flex items-center gap-2 px-4 py-2 rounded-sm whitespace-nowrap transition-all duration-300 text-xs md:text-sm font-bold uppercase tracking-wide border ${
+                  activeCategory === cat.id
+                    ? `bg-yellow-400 text-black border-yellow-400 shadow-[0_0_15px_rgba(250,204,21,0.4)]`
+                    : 'bg-transparent text-gray-500 border-transparent hover:text-gray-200'
+                }`}
+              >
+                {getCategoryIcon(cat.id)}
+                {cat.nombre}
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
 
-      {/* --- CONTENIDO --- */}
-      <div className="pt-52 max-w-4xl mx-auto px-4 space-y-20">
-        {data.categorias.map((categoria) => (
-          <section key={categoria.id} id={categoria.id} className="scroll-mt-52">
-            
-            <div className="flex flex-col items-center mb-10 text-center">
-              <h2 className={`text-3xl md:text-4xl font-serif ${accentColor} mb-2`}>
-                {categoria.nombre}
-              </h2>
-              {categoria.descripcion && (
-                <div className="flex items-center gap-4 w-full justify-center">
-                   <div className="h-px w-12 bg-gray-800"></div>
-                   <p className="text-gray-400 text-sm italic">{categoria.descripcion}</p>
-                   <div className="h-px w-12 bg-gray-800"></div>
-                </div>
-              )}
-            </div>
+      {/* --- CONTENIDO --- */}
+      {/* pt-[14rem] o pt-56: Ajuste para que el contenido empiece debajo de los dos headers fijos */}
+      <div className="pt-56 max-w-4xl mx-auto px-4 space-y-20">
+        {data.categorias.map((categoria) => (
+          <section key={categoria.id} id={categoria.id} className="scroll-mt-52">
+            
+            <div className="flex flex-col items-center mb-10 text-center">
+              <h2 className={`text-3xl md:text-4xl font-serif ${accentColor} mb-2`}>
+                {categoria.nombre}
+              </h2>
+              {categoria.descripcion && (
+                <div className="flex items-center gap-4 w-full justify-center">
+                   <div className="h-px w-12 bg-gray-800"></div>
+                   <p className="text-gray-400 text-sm italic">{categoria.descripcion}</p>
+                   <div className="h-px w-12 bg-gray-800"></div>
+                </div>
+              )}
+            </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
-              {categoria.platos.map((plato, index) => {
-                
-                // --- LÓGICA PARA SEPARADORES (TÍTULOS DE SUBSECCIÓN) ---
-                // Si el precio está vacío, lo renderizamos como un título decorativo que ocupa 2 columnas
-                if (!plato.precio) {
-                  return (
-                    <div 
-                      key={index} 
-                      className="col-span-1 md:col-span-2 pt-8 pb-4 text-center"
-                    >
-                      <h3 className="text-xl md:text-2xl font-serif text-yellow-400 border-b border-yellow-400/30 inline-block px-6 pb-2 tracking-widest uppercase">
-                        {plato.nombre}
-                      </h3>
-                      {plato.ingredientes && (
-                        <p className="text-xs text-gray-500 mt-2 uppercase tracking-wide">
-                          {plato.ingredientes}
-                        </p>
-                      )}
-                    </div>
-                  );
-                }
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
+              {categoria.platos.map((plato, index) => {
+                
+                // --- LÓGICA PARA SEPARADORES (TÍTULOS DE SUBSECCIÓN) ---
+                if (!plato.precio) {
+                  return (
+                    <div 
+                      key={index} 
+                      className="col-span-1 md:col-span-2 pt-8 pb-4 text-center"
+                    >
+                      <h3 className="text-xl md:text-2xl font-serif text-yellow-400 border-b border-yellow-400/30 inline-block px-6 pb-2 tracking-widest uppercase">
+                        {plato.nombre}
+                      </h3>
+                      {plato.ingredientes && (
+                        <p className="text-xs text-gray-500 mt-2 uppercase tracking-wide">
+                          {plato.ingredientes}
+                        </p>
+                      )}
+                    </div>
+                  );
+                }
 
-                // --- LÓGICA PARA PLATOS NORMALES ---
-                return (
-                  <div 
-                    key={index} 
-                    className="group relative flex justify-between items-end border-b border-gray-900 pb-3 hover:border-gray-700 transition-colors duration-300"
-                  >
-                    <div className="pr-4">
-                      <h3 className="text-lg font-medium text-gray-200 group-hover:text-yellow-400 transition-colors duration-300">
-                        {plato.nombre}
-                      </h3>
-                      {plato.ingredientes && (
-                        <p className="text-xs text-gray-500 mt-1 line-clamp-2">{plato.ingredientes}</p>
-                      )}
-                    </div>
-                    
-                    <div className="flex-shrink-0 text-right">
-                      <span className="text-lg font-bold text-white tabular-nums tracking-wide">
-                        {/* Controlamos que si es 'S/M' no ponga el símbolo de euro */}
-                        {plato.precio.includes('ud') || plato.precio.includes('S/M') ? plato.precio : `${plato.precio}€`}
-                      </span>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </section>
-        ))}
-      </div>
-      
-      {/* --- FOOTER --- */}
-      <div className="text-center py-20 space-y-3">
-        <div className="text-yellow-400 font-serif text-lg tracking-widest">
-            Casa Simón
-        </div>
-        <p className="text-gray-500 text-xs uppercase tracking-wider">
-            Calidad y Tradición
-        </p>
+                // --- LÓGICA PARA PLATOS NORMALES ---
+                return (
+                  <div 
+                    key={index} 
+                    className="group relative flex justify-between items-end border-b border-gray-900 pb-3 hover:border-gray-700 transition-colors duration-300"
+                  >
+                    <div className="pr-4">
+                      <h3 className="text-lg font-medium text-gray-200 group-hover:text-yellow-400 transition-colors duration-300">
+                        {plato.nombre}
+                      </h3>
+                      {plato.ingredientes && (
+                        <p className="text-xs text-gray-500 mt-1 line-clamp-2">{plato.ingredientes}</p>
+                      )}
+                    </div>
+                    
+                    <div className="shrink-0 text-right">
+                      <span className="text-lg font-bold text-white tabular-nums tracking-wide">
+                        {/* Controlamos que si es 'S/M' no ponga el símbolo de euro */}
+                        {plato.precio.includes('ud') || plato.precio.includes('S/M') ? plato.precio : `${plato.precio}€`}
+                      </span>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </section>
+        ))}
+      </div>
+      
+      {/* --- FOOTER INTERNO DE LA CARTA --- */}
+      <div className="text-center py-20 space-y-3">
+        <div className="text-yellow-400 font-serif text-lg tracking-widest">
+            Casa Simón
+        </div>
+        <p className="text-gray-500 text-xs uppercase tracking-wider">
+            Calidad y Tradición
+        </p>
 
-        {/* CONDICIONAL: Solo mostramos el aviso de IVA si showTaxWarning es TRUE */}
-        {showTaxWarning && (
-          <div className="pt-6">
-              <span className="px-4 py-2 border border-gray-800 rounded text-gray-400 text-[10px] uppercase tracking-widest bg-gray-900/50">
-                  I.V.A. no incluido en los precios
-              </span>
-          </div>
-        )}
-      </div>
+        {/* CONDICIONAL: Solo mostramos el aviso de IVA si showTaxWarning es TRUE */}
+        {showTaxWarning && (
+          <div className="pt-6">
+              <span className="px-4 py-2 border border-gray-800 rounded text-gray-400 text-[10px] uppercase tracking-widest bg-gray-900/50">
+                  I.V.A. no incluido en los precios
+              </span>
+          </div>
+        )}
+      </div>
 
-    </div>
-  );
+    </div>
+  );
 };
 
 export default Menu;

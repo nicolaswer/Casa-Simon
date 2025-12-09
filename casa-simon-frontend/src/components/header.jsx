@@ -21,12 +21,6 @@ function Header() {
         </div>
 
         <nav className="flex items-center space-x-12 text-white font-semibold tracking-wider">
-          <
-            Link to={APP_ROUTES.CARTA}
-            className="text-lg hover:text-yellow-400 transition duration-150 uppercase"
-          >
-            CARTA
-          </Link>
           <div className="flex items-center space-x-3 text-xl"> 
             <a 
                 href={APP_ROUTES.FACEBOOK} 

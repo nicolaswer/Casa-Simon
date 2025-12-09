@@ -18,7 +18,6 @@ function App() {
       <Routes>
         <Route path={APP_ROUTES.HOME} element={<Home />} />
         
-        {/* RESTAURANTE: Activamos el aviso de impuestos */}
         <Route 
             path={APP_ROUTES.CARTA_RESTAURANTE} 
             element={
