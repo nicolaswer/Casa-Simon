@@ -22,7 +22,7 @@ function FooterHome() {
             
             <StoreCard 
                 title="Restaurante Casa Simón"
-                specialty="Especialidad en arroces, pollos asados y tapas frías."
+                specialty="Especialidad en arroces y carnes a la brasa."
                 address="C/ Partida Altabix, 160, Elx, Alicante"
                 phone={APP_ROUTES.MAIN_RESTAURANT_PHONE}
                 mapLink={APP_ROUTES.MAIN_RESTAURANT}
@@ -30,7 +30,7 @@ function FooterHome() {
 
             <StoreCard 
                 title="Casa Simón Comidas Para Llevar"
-                specialty="Menú diario y paellas para llevar."
+                specialty="Comida casera y paellas para llevar."
                 address="C/ Benicassim, 2, Elx, Alicante"
                 phone={APP_ROUTES.LOCAL1_PHONE}
                 mapLink={APP_ROUTES.LOCAL1}
@@ -38,8 +38,8 @@ function FooterHome() {
 
             <StoreCard 
                 title="Casa Simón Comidas Para Llevar 2"
-                specialty="Menú diario y paellas para llevar."
-                address="C/ Benicassim, 2, Elx, Alicante"
+                specialty="Comida casera y paellas para llevar."
+                address="C/ Porta De la Morera, 27, Elx, Alicante"
                 phone={APP_ROUTES.LOCAL2_PHONE}
                 mapLink={APP_ROUTES.LOCAL2}
             />

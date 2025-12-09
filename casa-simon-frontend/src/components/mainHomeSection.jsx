@@ -4,8 +4,7 @@ import { APP_ROUTES } from '../config/routes';
 import { Utensils, ShoppingBag } from 'lucide-react'; // Iconos para reforzar visualmente
 
 function MainHomeSection() {
-    const backgroundUrl = "https://images.unsplash.com/photo-1515443961218-a51367888e4b?q=80&w=2070&auto=format&fit=crop"; 
-
+const backgroundUrl = "/HomeImg/fondo.png";
     return (
         <section className="relative w-full h-[85vh] min-h-[600px] flex items-center justify-center overflow-hidden">
             

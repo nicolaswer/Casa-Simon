@@ -17,10 +17,9 @@ export const restauranteData = {
         { "nombre": "Calamar nacional a la plancha", "precio": "5.00" },
         { "nombre": "Sepionet a la plancha", "precio": "5.00" },
         { "nombre": "Pescadito frito", "precio": "4.50" },
-        { "nombre": "Jamón Ibérico (Ración)", "precio": "5.00" }, 
-        { "nombre": "Pulpo (Ración)", "precio": "18.00" },
+        { "nombre": "Jamón Ibérico", "precio": "5.00" }, 
+        { "nombre": "Pulpo", "precio": "18.00" },
         { "nombre": "Mejillones al Vapor", "precio": "4.50" },
-        { "nombre": "Marisco hervido o a la plancha", "precio": "S/M ud" }
       ]
     },
     {
@@ -48,10 +47,10 @@ export const restauranteData = {
       "descripcion": "Nuestras especialidades",
       "platos": [
         { "nombre": "Paella de conejo y caracoles", "precio": "15.00" },
-        { "nombre": "Paella de pollo de campo y conejo", "precio": "15.00", "ingredientes": "Por encargo. Mínimo 2 personas" },
-        { "nombre": "Paella de verdura y magra", "precio": "15.00", "ingredientes": "Por encargo. Mínimo 2 personas" },
-        { "nombre": "Paella de verdura", "precio": "15.00", "ingredientes": "Por encargo. Mínimo 2 personas" },
-        { "nombre": "Paella a banda", "precio": "15.00", "ingredientes": "Por encargo. Mínimo 2 personas" },
+        { "nombre": "Paella de pollo de campo y conejo", "precio": "15.00" },
+        { "nombre": "Paella de verdura y magra", "precio": "15.00" },
+        { "nombre": "Paella de verdura", "precio": "15.00" },
+        { "nombre": "Paella a banda", "precio": "15.00"},
         { "nombre": "Gazpacho con conejo y caracoles", "precio": "15.00" }
       ]
     },
@@ -73,6 +72,25 @@ export const restauranteData = {
       "platos": [
         { "nombre": "Atún de ijada a la plancha", "precio": "16.00" },
         { "nombre": "Emperador a la plancha", "precio": "15.00" }
+      ]
+    },
+
+    {
+      "id": "postres",
+      "nombre": "Postres",
+      "descripcion": "Caseros y Fruta",
+      "platos": [
+        { "nombre": "Flan", "precio": "3.50" },
+        { "nombre": "Natillas", "precio": "3.50" },
+        { "nombre": "Pan de Calatrava", "precio": "3.50" },
+        { "nombre": "Arroz con Leche", "precio": "3.50" },
+        { "nombre": "Tarta de Queso", "precio": "3.50" },
+        { "nombre": "Tarta de Tres Chocolates", "precio": "3.50" },
+        { "nombre": "Tarta de Almendras", "precio": "3.50" },
+        { "nombre": "Piña Natural", "precio": "3.50" },
+        { "nombre": "Sandía (en temporada)", "precio": "3.50" },
+        { "nombre": "Melón", "precio": "3.50" },
+        { "nombre": "Fresas con Nata (en temporada)", "precio": "3.50" }
       ]
     },
     
@@ -150,8 +168,8 @@ export const restauranteData = {
         { "nombre": "Agua Mineral (Pequeña)", "precio": "2.00" },
         { "nombre": "Refrescos", "precio": "2.80", "ingredientes": "Coca-Cola, Fanta, Sprite, Nestea..." },
         { "nombre": "Cerveza (Caña)", "precio": "2.50" },
-        { "nombre": "Cerveza (Tercio/Botella)", "precio": "3.00" },
-        { "nombre": "Cerveza Sin Alcohol", "precio": "3.00" },
+        { "nombre": "Cerveza (Tercio/Botella)", "precio": "3.00","ingredientes": "Mahou, Heineken, Alhambra..." },
+        { "nombre": "Cerveza Sin Alcohol 0'0", "precio": "3.00" },
         { "nombre": "Tinto de Verano", "precio": "3.50" },
         { "nombre": "Sangría (Jarra 1L)", "precio": "16.00" },
         { "nombre": "Café Solo / Cortado", "precio": "1.80" },
@@ -159,25 +177,8 @@ export const restauranteData = {
         { "nombre": "Carajillo / Bombón", "precio": "2.50" },
         { "nombre": "Infusiones", "precio": "1.80" }
       ]
-    },
-
-    {
-      "id": "postres",
-      "nombre": "Postres",
-      "descripcion": "Caseros y Fruta",
-      "platos": [
-        { "nombre": "Flan", "precio": "3.50" },
-        { "nombre": "Natillas", "precio": "3.50" },
-        { "nombre": "Pan de Calatrava", "precio": "3.50" },
-        { "nombre": "Arroz con Leche", "precio": "3.50" },
-        { "nombre": "Tarta de Queso", "precio": "3.50" },
-        { "nombre": "Tarta de Tres Chocolates", "precio": "3.50" },
-        { "nombre": "Tarta de Almendras", "precio": "3.50" },
-        { "nombre": "Piña Natural", "precio": "3.50" },
-        { "nombre": "Sandía (en temporada)", "precio": "3.50" },
-        { "nombre": "Melón", "precio": "3.50" },
-        { "nombre": "Fresas con Nata (en temporada)", "precio": "3.50" }
-      ]
     }
+
+    
   ]
 };

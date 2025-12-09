@@ -1,4 +1,4 @@
-// Archivo: src/data/parallevarData.js
+// src/data/parallevarData.js
 
 export const parallevarData = {
   "categorias": [
@@ -106,6 +106,56 @@ export const parallevarData = {
         { "nombre": "Tarta Pistacho", "precio": "4.00" },
         { "nombre": "Tarta Oreo", "precio": "4.00" },
         { "nombre": "Arroz con Leche", "precio": "3.00" }
+      ]
+    },
+    
+    /* --- BEBIDAS AGRUPADAS POR TAMAÑO --- */
+    {
+      "id": "bebidas_takeaway",
+      "nombre": "Bebidas",
+      "descripcion": "Refrescos y Cervezas frías",
+      "platos": [
+        // REFRESCOS (Agrupados)
+        { 
+          "nombre": "Refrescos (Lata)", 
+          "precio": "1.50", 
+          "ingredientes": "Coca-Cola, Fanta, Tinto de Verano, Zumos" 
+        },
+        { 
+          "nombre": "Refrescos (1 Litro)", 
+          "precio": "2.00", 
+          "ingredientes": "Coca-Cola, Fanta" 
+        },
+        { 
+          "nombre": "Refrescos (1,5 Litros)", 
+          "precio": "2.50", 
+          "ingredientes": "Coca-Cola" 
+        },
+        { 
+          "nombre": "Refrescos (2 Litros)", 
+          "precio": "3.00", 
+          "ingredientes": "Coca-Cola" 
+        },
+
+        // Especiales (Precio diferente)
+        { "nombre": "Aquarius (1,5 Litros)", "precio": "3.00" },
+        { "nombre": "Red Bull", "precio": "2.00" },
+        { "nombre": "Agua con Gas", "precio": "1.80" },
+
+        // CERVEZAS
+        { 
+          "nombre": "Cerveza (Lata)", 
+          "precio": "1.50", 
+          "ingredientes": "Normal o Sin Alcohol" 
+        },
+        { "nombre": "Alhambra Reserva (Lata)", "precio": "2.50" },
+        
+        { "nombre": "Cerveza Sin Alcohol (Litro)", "precio": "2.50" },
+        { "nombre": "Cerveza (Litro)", "precio": "3.00" }, // Asumimos Mahou/Normal es más cara según imagen anterior o estándar
+
+        // AGUAS
+        { "nombre": "Agua Mineral (Pequeña)", "precio": "1.50" },
+        { "nombre": "Agua Solán (1,5 Litros)", "precio": "2.00" }
       ]
     }
   ]

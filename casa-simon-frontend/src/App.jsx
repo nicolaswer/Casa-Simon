@@ -1,4 +1,4 @@
-// src/App.js
+// src/App.jsx
 
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -8,12 +8,18 @@ import Home from './components/home';
 import Menu from './components/Menu';
 import { APP_ROUTES } from './config/routes';
 
+// 1. IMPORTA EL COMPONENTE NUEVO
+import ScrollToTop from './components/ScrollToTop'; 
+
 import { parallevarData } from './data/parallevarData'; 
 import { restauranteData } from './data/restauranteData'; 
 
 function App() {
   return (
     <Router>
+      {/* 2. PONLO AQUÍ, DENTRO DEL ROUTER PERO ANTES DE TODO */}
+      <ScrollToTop /> 
+
       <Header />
       <Routes>
         <Route path={APP_ROUTES.HOME} element={<Home />} />
@@ -24,19 +30,18 @@ function App() {
                 <Menu 
                     data={restauranteData} 
                     title="Carta de Restaurante"
-                    showTaxWarning={true}  // <--- AQUÍ ESTÁ LA CLAVE (TRUE = Muestra IVA no incl.)
+                    showTaxWarning={true}
                 />
             } 
         />
         
-        {/* PARA LLEVAR: Desactivamos el aviso */}
         <Route 
             path={APP_ROUTES.CARTA_LLEVAR} 
             element={
                 <Menu 
                     data={parallevarData} 
                     title="Carta Para Llevar"
-                    showTaxWarning={false} // <--- FALSE = Lo oculta
+                    showTaxWarning={false}
                 />
             } 
         />
