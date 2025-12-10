@@ -1,5 +1,8 @@
 // src/data/restauranteData.js
 
+//"alergenos": ["gluten", "leche", "huevos"] (Example of how to add allergens if needed in the future)
+
+
 export const restauranteData = {
   "categorias": [
     {
@@ -10,16 +13,18 @@ export const restauranteData = {
         { "nombre": "Verdura a la plancha", "precio": "4.50" },
         { "nombre": "Alcachofas en temporada", "precio": "4.50" },
         { "nombre": "Champiñón", "precio": "4.50" },
-        { "nombre": "Croquetas de jamón", "precio": "2.00" },
-        { "nombre": "Queso frito con mermelada de tomate", "precio": "4.50" },
-        { "nombre": "Queso fresco a la plancha", "precio": "4.50" },
-        { "nombre": "Calamar nacional a la romana", "precio": "5.00" },
-        { "nombre": "Calamar nacional a la plancha", "precio": "5.00" },
-        { "nombre": "Sepionet a la plancha", "precio": "5.00" },
-        { "nombre": "Pescadito frito", "precio": "4.50" },
         { "nombre": "Jamón Ibérico", "precio": "5.00" }, 
-        { "nombre": "Pulpo", "precio": "18.00" },
-        { "nombre": "Mejillones al Vapor", "precio": "4.50" },
+        // Croquetas: Gluten/Leche/Huevo (Estándar bechamel y rebozado)
+        { "nombre": "Croquetas de jamón", "precio": "2.00", "alergenos": ["gluten", "leche", "huevos"] },
+        // Queso frito: Gluten según matriz + Leche
+        { "nombre": "Queso frito con mermelada de tomate", "precio": "4.50", "alergenos": ["gluten", "leche"] },
+        { "nombre": "Queso fresco a la plancha", "precio": "4.50", "alergenos": ["leche"] },
+        // Calamar romana: Rebozado (Gluten) + Molusco
+        { "nombre": "Calamar nacional a la romana", "precio": "5.00", "alergenos": ["gluten", "moluscos", "huevos"] },
+        { "nombre": "Calamar nacional a la plancha", "precio": "5.00", "alergenos": ["moluscos"] },
+        { "nombre": "Pescadito frito", "precio": "5.00", "alergenos": ["pescados", "gluten"] },
+        { "nombre": "Pulpo", "precio": "18.00", "alergenos": ["moluscos"] },
+        { "nombre": "Mejillones al Vapor", "precio": "4.50", "alergenos": ["moluscos"] },
       ]
     },
     {
@@ -27,8 +32,8 @@ export const restauranteData = {
       "nombre": "Conservas",
       "descripcion": "Selección especial",
       "platos": [
-        { "nombre": "Berberechos Especiales", "precio": "12.00" },
-        { "nombre": "Mejillones", "precio": "12.00" }
+        { "nombre": "Berberechos Especiales", "precio": "14.00", "alergenos": ["moluscos"] },
+        { "nombre": "Mejillones", "precio": "12.00", "alergenos": ["moluscos"] }
       ]
     },
     {
@@ -36,9 +41,11 @@ export const restauranteData = {
       "nombre": "Ensaladas",
       "descripcion": "Frescas y naturales",
       "platos": [
-        { "nombre": "Ensalada Mixta", "precio": "15.00" },
-        { "nombre": "Tomate con Capellán", "precio": "15.00" },
-        { "nombre": "Tomate con Ventresca", "precio": "15.00" }
+        // Ensalada Mixta: Pescado (Atún) según matriz
+        { "nombre": "Ensalada Mixta", "precio": "15.00", "alergenos": ["pescados"] },
+        // Capellán: Pescado según matriz
+        { "nombre": "Tomate con Capellán", "precio": "15.00", "alergenos": ["pescados"] },
+        { "nombre": "Tomate con Ventresca", "precio": "15.00", "alergenos": ["pescados"] }
       ]
     },
     {
@@ -50,8 +57,10 @@ export const restauranteData = {
         { "nombre": "Paella de pollo de campo y conejo", "precio": "15.00" },
         { "nombre": "Paella de verdura y magra", "precio": "15.00" },
         { "nombre": "Paella de verdura", "precio": "15.00" },
-        { "nombre": "Paella a banda", "precio": "15.00"},
-        { "nombre": "Gazpacho con conejo y caracoles", "precio": "15.00" }
+        // A banda: Crustáceos, Moluscos, Pescados (según 'Paella Moluscos' de matriz)
+        { "nombre": "Paella a banda", "precio": "15.00", "alergenos": ["crustaceos", "moluscos", "pescados"] },
+        // Gazpacho: Gluten según matriz
+        { "nombre": "Gazpacho con conejo y caracoles", "precio": "15.00", "alergenos": ["gluten"] }
       ]
     },
     {
@@ -59,10 +68,11 @@ export const restauranteData = {
       "nombre": "Carnes a la Brasa",
       "descripcion": "Al punto de leña",
       "platos": [
-        { "nombre": "Chuletas de cordero", "precio": "15.00" },
-        { "nombre": "Chuletón de Ternera", "precio": "22.00" },
-        { "nombre": "Entrecot de Ternera", "precio": "22.00" },
-        { "nombre": "Pechuga o muslo de Pollo", "precio": "13.00" }
+        // Cordero Brasa: Sulfitos según matriz
+        { "nombre": "Chuletas de cordero", "precio": "15.00", "alergenos": ["sulfito"] },
+        { "nombre": "Chuletón de Ternera", "precio": "25.00" },
+        { "nombre": "Entrecot de Ternera", "precio": "25.00" },
+        { "nombre": "Pechuga o muslo de Pollo", "precio": "15.00" }
       ]
     },
     {
@@ -70,27 +80,27 @@ export const restauranteData = {
       "nombre": "Pescados",
       "descripcion": "Del mar a la plancha",
       "platos": [
-        { "nombre": "Atún de ijada a la plancha", "precio": "16.00" },
-        { "nombre": "Emperador a la plancha", "precio": "15.00" }
+        { "nombre": "Emperador a la plancha", "precio": "15.00", "alergenos": ["pescados"] },
+        { "nombre": "Merluza a la plancha", "precio": "15.00", "alergenos": ["pescados"] }
       ]
     },
-
     {
       "id": "postres",
       "nombre": "Postres",
       "descripcion": "Caseros y Fruta",
       "platos": [
-        { "nombre": "Flan", "precio": "3.50" },
-        { "nombre": "Natillas", "precio": "3.50" },
-        { "nombre": "Pan de Calatrava", "precio": "3.50" },
-        { "nombre": "Arroz con Leche", "precio": "3.50" },
-        { "nombre": "Tarta de Queso", "precio": "3.50" },
-        { "nombre": "Tarta de Tres Chocolates", "precio": "3.50" },
-        { "nombre": "Tarta de Almendras", "precio": "3.50" },
+        { "nombre": "Flan", "precio": "3.50", "alergenos": ["huevos", "leche"] },
+        // Natillas a menudo llevan galleta (gluten)
+        { "nombre": "Natillas", "precio": "3.50", "alergenos": ["huevos", "leche", "gluten"] },
+        { "nombre": "Pan de Calatrava", "precio": "3.50", "alergenos": ["huevos", "leche", "gluten"] },
+        { "nombre": "Arroz con Leche", "precio": "3.50", "alergenos": ["leche"] },
+        { "nombre": "Tarta de Queso", "precio": "3.50", "alergenos": ["leche", "huevos", "gluten"] },
+        { "nombre": "Tarta de Tres Chocolates", "precio": "3.50", "alergenos": ["leche", "soja"] },
+        { "nombre": "Tarta de Almendras", "precio": "3.50", "alergenos": ["fruto seco", "huevos"] },
+        { "nombre": "Fresas con Nata (en temporada)", "precio": "3.50", "alergenos": ["leche"] },
         { "nombre": "Piña Natural", "precio": "3.50" },
         { "nombre": "Sandía (en temporada)", "precio": "3.50" },
-        { "nombre": "Melón", "precio": "3.50" },
-        { "nombre": "Fresas con Nata (en temporada)", "precio": "3.50" }
+        { "nombre": "Melón", "precio": "3.50" }
       ]
     },
     
@@ -109,7 +119,7 @@ export const restauranteData = {
         { "nombre": "Pergamino", "precio": "14.00", "ingredientes": "D.O. Rioja" },
         { "nombre": "El Coto", "precio": "14.00", "ingredientes": "D.O. Rioja" },
         { "nombre": "Muga", "precio": "27.50", "ingredientes": "D.O. Rioja" },
-        { "nombre": "Tierra Murillo", "precio": "14.00", "ingredientes": "D.O. Rioja" },
+        //{ "nombre": "Tierra Murillo", "precio": "14.00", "ingredientes": "D.O. Rioja" },
         { "nombre": "Remelluri", "precio": "30.50", "ingredientes": "D.O. Rioja" },
         { "nombre": "Coto de Imaz", "precio": "16.00", "ingredientes": "D.O. Rioja" },
         

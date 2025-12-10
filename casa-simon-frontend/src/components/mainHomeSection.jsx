@@ -29,26 +29,23 @@ const backgroundUrl = "/HomeImg/fondo.png";
                     {/* Opción 1: RESTAURANTE (Estilo Principal - Dorado) */}
                     <Link
                         to={APP_ROUTES.CARTA_RESTAURANTE}
-                        className="group relative px-10 py-4 border border-yellow-500/50 bg-black/40 backdrop-blur-sm
-                                text-yellow-400 font-serif font-bold text-xl uppercase tracking-[0.2em]
+                        className="px-10 py-4 border border-yellow-400/60 bg-yellow-400/5 backdrop-blur-sm
+                                text-yellow-400 font-sans font-medium text-sm uppercase tracking-[0.2em]
                                 hover:bg-yellow-400 hover:text-black hover:border-yellow-400
-                                transition-all duration-500 ease-out text-center shadow-[0_0_20px_rgba(0,0,0,0.5)]"
+                                transition-all duration-300 ease-out text-center min-w-[240px]"
                     >
-                        <span className="relative z-10">Carta Sala</span>
-                        {/* Efecto de luz al hacer hover */}
-                        <div className="absolute inset-0 bg-yellow-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        Carta Restaurante
                     </Link>
                         
-                    {/* OPCIÓN 2: PARA LLEVAR (La opción Funcional) */}
-                    {/* Estilo: Texto Blanco, Borde Blanco Fino, Limpio */}
+                    {/* Opción 2: CARTA LOCAL (Estilo Blanco Fino) */}
                     <Link
                         to={APP_ROUTES.CARTA_LLEVAR}
                         className="px-10 py-4 border border-white/30 bg-white/5 backdrop-blur-sm
-                                text-white font-sans font-light text-sm uppercase tracking-[0.2em]
+                                text-white font-sans font-medium text-sm uppercase tracking-[0.2em]
                                 hover:bg-white hover:text-black hover:border-white
-                                transition-all duration-300 ease-out text-center"
+                                transition-all duration-300 ease-out text-center min-w-[240px]"
                     >
-                        Para Llevar
+                        Carta Local
                     </Link>
                 </div>
                 {/* --------------------------- */}

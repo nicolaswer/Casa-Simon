@@ -1,5 +1,8 @@
 // src/data/parallevarData.js
 
+//"alergenos": ["gluten", "leche", "huevos"] (Example of how to add allergens if needed in the future)
+
+
 export const parallevarData = {
   "categorias": [
     {
@@ -7,20 +10,20 @@ export const parallevarData = {
       "nombre": "Ensaladas y Fríos",
       "descripcion": "Frescas y preparadas al momento",
       "platos": [
-        { "nombre": "Ensalada de Verano", "precio": "5.50 / 3.00" },
-        { "nombre": "Ensalada Murciana", "precio": "5.50 / 3.00" },
+        { "nombre": "Ensalada de Verano", "precio": "5.50 / 3.00","alergenos": ["pescados", "huevos"] },
+        { "nombre": "Ensalada Murciana", "precio": "5.50 / 3.00","alergenos": ["pescados", "huevos"]  },
         { "nombre": "Ensalada de Pasta", "precio": "5.50 / 3.00" },
         { "nombre": "Ensalada de Patata", "precio": "5.50 / 3.00" },
-        { "nombre": "Mixta Pequeña", "precio": "5.50" },
-        { "nombre": "Mixta Grande", "precio": "9.00" },
-        { "nombre": "César Pequeña", "precio": "5.50" },
-        { "nombre": "César Grande", "precio": "9.00" },
-        { "nombre": "Tomate y Capellán", "precio": "6.00" },
-        { "nombre": "Gazpacho Andaluz", "precio": "5.50" },
-        { "nombre": "Ensaladilla Rusa", "precio": "4.00" },
-        { "nombre": "Boca", "precio": "4.00" },
-        { "nombre": "Patata con Ajo", "precio": "4.00" },
-        { "nombre": "Tabulé", "precio": "5.50" }
+        { "nombre": "Mixta Pequeña", "precio": "5.50","alergenos": ["pescados"] },
+        { "nombre": "Mixta Grande", "precio": "9.00","alergenos": ["pescados"] },
+        { "nombre": "César Pequeña", "precio": "5.50","alergenos": ["fruto seco", "leche", "sulfito"] },
+        { "nombre": "César Grande", "precio": "9.00","alergenos": ["fruto seco", "leche", "sulfito"]  },
+        { "nombre": "Tomate y Capellán", "precio": "6.00","alergenos": ["pescados"]  },
+        { "nombre": "Gazpacho Andaluz", "precio": "5.50","alergenos": ["gluten"] },
+        { "nombre": "Ensaladilla Rusa", "precio": "4.00","alergenos": ["pescados", "huevos", "soja"]  },
+        { "nombre": "Ensaladilla de Boca", "precio": "4.00","alergenos": ["pescados","crustaceos","huevos"] },
+        { "nombre": "Patata con Ajo", "precio": "4.00","alergenos": ["huevos"] },
+        { "nombre": "Tabulé", "precio": "5.50","alergenos": ["gluten"] }
       ]
     },
     {
@@ -28,20 +31,20 @@ export const parallevarData = {
       "nombre": "Pastas",
       "descripcion": "Clásicos italianos y elaboraciones caseras",
       "platos": [
-        { "nombre": "Canelones de Carne", "precio": "5.50" },
-        { "nombre": "Canelones de Espinaca", "precio": "5.50" },
-        { "nombre": "Lasaña de Pollo", "precio": "5.50" },
-        { "nombre": "Lasaña de Verdura", "precio": "5.50" },
-        { "nombre": "Lasaña de Carne", "precio": "5.50" },
-        { "nombre": "Berenjena de Carne", "precio": "5.50" },
-        { "nombre": "Berenjena de Verdura", "precio": "5.50" },
-        { "nombre": "Spaghetti Boloñesa", "precio": "5.50 / 3.00" },
-        { "nombre": "Macarrones Boloñesa", "precio": "5.50 / 3.00" },
-        { "nombre": "Spaghetti Carbonara", "precio": "5.50 / 3.00" },
-        { "nombre": "Arroz Tres Delicias", "precio": "5.50 / 3.00" },
+        { "nombre": "Canelones de Carne", "precio": "5.50","alergenos": ["gluten"] },
+        { "nombre": "Canelones de Espinaca", "precio": "5.50","alergenos": ["gluten"] },
+        { "nombre": "Lasaña de Pollo", "precio": "5.50","alergenos": ["gluten","leche"] },
+        { "nombre": "Lasaña de Verdura", "precio": "5.50","alergenos": ["gluten","leche"] },
+        { "nombre": "Lasaña de Carne", "precio": "5.50","alergenos": ["gluten","leche"] },
+        { "nombre": "Berenjena de Carne", "precio": "5.50","alergenos": ["leche"] },
+        { "nombre": "Berenjena de Verdura", "precio": "5.50","alergenos": ["leche"] },
+        { "nombre": "Spaghetti Boloñesa", "precio": "5.50 / 3.00","alergenos": ["gluten"] },
+        { "nombre": "Macarrones Boloñesa", "precio": "5.50 / 3.00","alergenos": ["gluten"] },
+        { "nombre": "Spaghetti Carbonara", "precio": "5.50 / 3.00","alergenos": ["gluten","huevos","leche","sulfito"] },
+        { "nombre": "Arroz Tres Delicias", "precio": "5.50 / 3.00","alergenos": ["crustaceos","pescados","huevos","sulfito"] },
         { "nombre": "Ensalada de Arroz", "precio": "5.50 / 3.00" },
-        { "nombre": "Tortellini o Ravioli", "precio": "5.50 / 3.00" },
-        { "nombre": "Tallarines Teriyaki", "precio": "5.50 / 3.00" }
+        { "nombre": "Tortellini o Ravioli", "precio": "5.50 / 3.00","alergenos": ["gluten","sulfito"] },
+        { "nombre": "Tallarines Teriyaki", "precio": "5.50 / 3.00","alergenos": ["gluten","soja","sulfito"] }
       ]
     },
     {
@@ -49,28 +52,31 @@ export const parallevarData = {
       "nombre": "Caseros y Tapas",
       "descripcion": "Guisos del día, carnes y raciones",
       "platos": [
-        { "nombre": "Embutidos con Pimiento", "precio": "6.00 / 3.00" },
+        { "nombre": "Embutidos con Pimiento", "precio": "6.00 / 3.00","alergenos": ["sulfito"] },
         { "nombre": "Berenjena Rellena (Carne/Verduras)", "precio": "5.50" },
         { "nombre": "Sangre con Cebolla", "precio": "5.50 / 3.00" },
         { "nombre": "Hígado con Ajos", "precio": "5.50 / 3.00" },
         { "nombre": "Pollo de Campo y Conejo con Tomate", "precio": "6.00 / 3.50" },
         { "nombre": "Magra con Tomate", "precio": "5.50 / 3.00" },
-        { "nombre": "Albóndigas con Verdura", "precio": "5.50 / 3.00" },
+        { "nombre": "Albóndigas con Verdura", "precio": "5.50 / 3.00","alergenos": ["gluten","huevos","sulfito"] },
         { "nombre": "Callos", "precio": "5.50" },
         { "nombre": "Pelotas con Caldo", "precio": "5.50" },
         { "nombre": "Cocido", "precio": "6.00" },
-        { "nombre": "Gazpacho Manchego", "precio": "5.50 / 3.00" },
-        { "nombre": "Lentejas", "precio": "5.50 / 3.00" },
+        { "nombre": "Gazpacho Manchego", "precio": "5.50 / 3.00","alergenos": ["gluten","sulfito"] },
+        { "nombre": "Lentejas", "precio": "5.50 / 3.00","alergenos": ["sulfito"] },
         { "nombre": "Crema de Calabaza", "precio": "5.00" },
-        { "nombre": "Pincho de Tortilla", "precio": "3.00" },
+        { "nombre": "Pincho de Tortilla", "precio": "3.00","alergenos": ["huevos"] },
         { "nombre": "Cordero", "precio": "11.00" },
-        { "nombre": "Migas", "precio": "5.50" },
-        { "nombre": "Conejo al Ajillo", "precio": "5.50" },
+        { "nombre": "Migas", "precio": "5.50","alergenos": ["gluten","sulfito"] },
+        { "nombre": "Conejo al Ajillo", "precio": "5.50","alergenos": ["fruto seco"] },
         { "nombre": "Fritura de Pescado", "precio": "5.50" },
-        { "nombre": "Queso Frito", "precio": "5.50" },
+        { "nombre": "Queso Frito", "precio": "5.50","alergenos": ["gluten"] },
         { "nombre": "Croquetas de Jamón", "precio": "1.20 ud" },
         { "nombre": "Huevos Rotos", "precio": "5.50" },
-        { "nombre": "Rustidera de Pollo", "precio": "5.00" }
+        { "nombre": "Rustidera de Pollo", "precio": "5.00" },
+        { "nombre": "Patatas Asadas", "precio": "5.00" },
+        { "nombre": "Bacalao con Tomate", "precio": "4.00","alergenos": ["gluten","huevos","pescado"] },
+        { "nombre": "Consome Relleno", "precio": "5.50","alergenos": ["gluten","huevos"] }
       ]
     },
     {
@@ -84,10 +90,10 @@ export const parallevarData = {
         { "nombre": "Arroz de Costillar con Ajos Tiernos", "precio": "5.50 / 3.00" },
         { "nombre": "Arroz Magra y Verdura", "precio": "5.50 / 3.00" },
         { "nombre": "Arroz de Verdura", "precio": "5.50 / 3.00" },
-        { "nombre": "Arroz a Banda", "precio": "6.00 / 3.50" },
-        { "nombre": "Fideuá", "precio": "6.00 / 3.50" },
+        { "nombre": "Arroz a Banda", "precio": "6.00 / 3.50","alergenos": ["crustaceos","moluscos","pescados"] },
+        { "nombre": "Fideuá", "precio": "6.00 / 3.50","alergenos": ["crustaceos","moluscos","pescados"] },
         { "nombre": "Arroz al Horno", "precio": "5.50 / 3.00" },
-        { "nombre": "Arroz con Costra", "precio": "5.50" }
+        { "nombre": "Arroz con Costra", "precio": "5.50","alergenos": ["huevos"] }
       ]
     },
     {
@@ -150,7 +156,7 @@ export const parallevarData = {
         },
         { "nombre": "Alhambra Reserva (Lata)", "precio": "2.50" },
         
-        { "nombre": "Cerveza Sin Alcohol (Litro)", "precio": "2.50" },
+        { "nombre": "Cerveza Sin Alcohol (Litro)", "precio": "3.00" },
         { "nombre": "Cerveza (Litro)", "precio": "3.00" }, // Asumimos Mahou/Normal es más cara según imagen anterior o estándar
 
         // AGUAS
