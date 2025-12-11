@@ -3,7 +3,7 @@ import {
   Salad, Wheat, UtensilsCrossed, ChefHat, IceCream, ArrowLeft,
   Coffee, Soup, Drumstick, Fish, 
   // Iconos BÁSICOS (Seguros)
-  Milk, Egg, Info, Shell, AlertCircle, Wine, CookingPot
+  Milk, Egg, Info, Shell, AlertCircle, Wine, CookingPot, Nut, Sandwich
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { APP_ROUTES } from '../config/routes';
@@ -22,6 +22,8 @@ const getCategoryIcon = (id) => {
   if (safeId.includes('bodega') || safeId.includes('vino')) return <Wine className="w-5 h-5" />;
   if (safeId.includes('paellas') || safeId.includes('arroz')) return <CookingPot className="w-5 h-5" />;
   if (safeId.includes('conserva')) return <Shell className="w-5 h-5" />;
+  if (safeId.includes('desayunos')) return <Coffee className="w-5 h-5" />;
+  if (safeId.includes('almuerzos')) return <Sandwich className="w-5 h-5" />;
   return <UtensilsCrossed className="w-5 h-5" />;
 };
 
@@ -118,11 +120,21 @@ const Menu = ({ data, title, showTaxWarning = false }) => {
   const scrollToCategory = (id) => {
     setIsManualScroll(false); 
     setActiveCategory(id);
+    
     const element = document.getElementById(id);
     if (element) {
-      const yOffset = showAllergens ? -280 : -180; 
+      // --- AJUSTE DE ALTURA (OFFSET) ---
+      // Calculamos cuánto espacio ocupa tu cabecera fija para restar esa cantidad.
+      // - Si la leyenda de alérgenos está abierta, la cabecera es GIGANTE (aprox 340px).
+      // - Si está cerrada, es grande (aprox 240px).
+      // Aumentamos estos valores para que el Título respire y se vea bien.
+      
+      const yOffset = showAllergens ? -380 : -280; 
+      
       const y = element.getBoundingClientRect().top + window.scrollY + yOffset;
+      
       window.scrollTo({ top: y, behavior: 'smooth' });
+
       setTimeout(() => setIsManualScroll(true), 800);
     }
   };

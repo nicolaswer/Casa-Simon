@@ -12,7 +12,9 @@ import { APP_ROUTES } from './config/routes';
 import ScrollToTop from './components/BotonSubir'; 
 
 import { parallevarData } from './data/parallevarData'; 
-import { restauranteData } from './data/restauranteData'; 
+import { restauranteData } from './data/restauranteData';
+import { desayunosData as desayunosAlmuerzosData } from './data/desayunosAlmuerzosData';
+
 
 function App() {
   return (
@@ -42,6 +44,17 @@ function App() {
                     data={parallevarData} 
                     title="Carta Para Llevar"
                     showTaxWarning={false}
+                />
+            } 
+        />
+
+        <Route 
+            path={APP_ROUTES.CARTA_DESAYUNOS_ALMUERZOS} 
+            element={
+                <Menu 
+                    data={desayunosAlmuerzosData} 
+                    title="Desayunos y Almuerzos" 
+                    showTaxWarning={false} // Sí lleva IVA aviso
                 />
             } 
         />
