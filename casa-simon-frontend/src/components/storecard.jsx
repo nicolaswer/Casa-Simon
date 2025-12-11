@@ -44,6 +44,7 @@ function StoreCard({ title, specialty, address, phone, mapLink }) {
             target="_blank"
             rel="noopener noreferrer"
             className="w-full text-center px-5 py-2 text-sm font-bold border border-white hover:bg-white hover:text-black transition duration-300"
+            aria-label="Ver mapa en Google Maps del establecimiento"
           >
             VER MAPA
           </a>
@@ -51,6 +52,7 @@ function StoreCard({ title, specialty, address, phone, mapLink }) {
           <a 
             href={`tel:${phone}`} 
             className="w-full text-center px-5 py-2 text-sm font-bold bg-yellow-300 text-black hover:bg-yellow-600 transition duration-300"
+            aria-label="Llamar al establecimiento"
           >
             LLAMAR
           </a>

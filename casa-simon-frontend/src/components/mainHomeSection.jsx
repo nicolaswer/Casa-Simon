@@ -11,7 +11,7 @@ const backgroundUrl = "/HomeImg/fondo.png";
             {/* Fondo y Overlay */}
             <div className="absolute inset-0 w-full h-full bg-cover bg-center" style={{ backgroundImage: `url(${backgroundUrl})` }} />
             <div className="absolute inset-0 bg-black/60 z-10"></div>
-            <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-black to-transparent z-10"></div>
+            <div className="absolute bottom-0 left-0 w-full h-32 bg-linear-to-t from-black to-transparent z-10"></div>
 
             <div className="relative z-20 flex flex-col items-center max-w-5xl text-center px-4">
                 
@@ -32,7 +32,8 @@ const backgroundUrl = "/HomeImg/fondo.png";
                         className="px-10 py-4 border border-yellow-400/60 bg-yellow-400/5 backdrop-blur-sm
                                 text-yellow-400 font-sans font-medium text-sm uppercase tracking-[0.2em]
                                 hover:bg-yellow-400 hover:text-black hover:border-yellow-400
-                                transition-all duration-300 ease-out text-center min-w-[240px]"
+                                transition-all duration-300 ease-out text-center min-w-60"
+                        aria-label="Ver la carta del restaurante"
                     >
                         Carta Restaurante
                     </Link>
@@ -43,7 +44,8 @@ const backgroundUrl = "/HomeImg/fondo.png";
                         className="px-10 py-4 border border-white/30 bg-white/5 backdrop-blur-sm
                                 text-white font-sans font-medium text-sm uppercase tracking-[0.2em]
                                 hover:bg-white hover:text-black hover:border-white
-                                transition-all duration-300 ease-out text-center min-w-[240px]"
+                                transition-all duration-300 ease-out text-center min-w-60"
+                        aria-label="Ver la carta de desayunos y almuerzos"
                     >
                         Carta Desayunos / Almuerzos
                     </Link>
@@ -54,13 +56,13 @@ const backgroundUrl = "/HomeImg/fondo.png";
                         className="px-10 py-4 border border-white/30 bg-white/5 backdrop-blur-sm
                                 text-white font-sans font-medium text-sm uppercase tracking-[0.2em]
                                 hover:bg-white hover:text-black hover:border-white
-                                transition-all duration-300 ease-out text-center min-w-[240px]"
+                                transition-all duration-300 ease-out text-center min-w-60"
+                        aria-label="Ver la carta para llevar"
                     >
                         Carta Local
                     </Link>
                     
                 </div>
-                {/* --------------------------- */}
                 
             </div>
         </section>

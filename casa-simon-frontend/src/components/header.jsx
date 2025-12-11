@@ -13,6 +13,7 @@ function Header() {
             <
               Link to={APP_ROUTES.HOME}
               className=" text-white transition duration-150 font-bold"
+              aria-label="Ir a la página principal"
             >
             Casa
               <span className="text-yellow-400"> Simón</span>
@@ -27,6 +28,7 @@ function Header() {
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="hover:text-yellow-400 transition duration-150"
+                aria-label="Visita nuestra página de Facebook"
             >
                 <FaFacebookF />
             </a>
@@ -35,6 +37,7 @@ function Header() {
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="hover:text-yellow-400 transition duration-150"
+                aria-label="Visita nuestra página de Instagram"
             >
                 <FaInstagram />
             </a>

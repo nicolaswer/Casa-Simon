@@ -11,7 +11,6 @@ export default {
       fontFamily: {
         'firma': ['"Great Vibes"', 'cursive'], 
         'elegante': ['"Cormorant Garamond"', 'serif'], 
-        'parisienne': ['"Parisienne"', 'cursive'],
       },
     },
   },
