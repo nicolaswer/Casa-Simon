@@ -4,12 +4,17 @@ import { APP_ROUTES } from '../config/routes';
 import { Utensils, ShoppingBag } from 'lucide-react'; // Iconos para reforzar visualmente
 
 function MainHomeSection() {
-const backgroundUrl = "/HomeImg/fondo.png";
+const backgroundUrl = "/HomeImg/fondo.webp";
     return (
         <section className="relative w-full h-[85vh] min-h-[600px] flex items-center justify-center overflow-hidden">
             
             {/* Fondo y Overlay */}
-            <div className="absolute inset-0 w-full h-full bg-cover bg-center" style={{ backgroundImage: `url(${backgroundUrl})` }} />
+            <img 
+                src={backgroundUrl}
+                alt="Paella tradicional española de mariscos, símbolo de la cocina ilicitana" 
+                className="absolute inset-0 w-full h-full object-cover object-center"
+                fetchpriority="high"
+            />
             <div className="absolute inset-0 bg-black/60 z-10"></div>
             <div className="absolute bottom-0 left-0 w-full h-32 bg-linear-to-t from-black to-transparent z-10"></div>
 

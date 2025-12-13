@@ -36,7 +36,7 @@ export const restauranteData = {
         { "nombre": "Mejillones", "precio": "12.10", "alergenos": ["moluscos"] },
         { "nombre": "Patatas de Bolsa", "precio": "2.50", "alergenos": ["gluten"] },
         { "nombre": "Olivas", "precio": "1.50", "alergenos": [] },
-        { "nombre": "Alemndras Fritas", "precio": "1.50", "alergenos": ["fruto seco"] },
+        { "nombre": "Almendras Fritas", "precio": "1.50", "alergenos": ["fruto seco"] },
         { "nombre": "Pan tostado", "precio": "2.00", "alergenos": ["gluten"] },
       ]
     },
