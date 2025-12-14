@@ -2,8 +2,6 @@ import React, {lazy, Suspense} from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/header';
 import Footer from './components/footer';
-import Home from './components/home';
-import Menu from './components/Menu';
 import { APP_ROUTES } from './config/routes';
 
 // 1. IMPORTA EL COMPONENTE NUEVO
