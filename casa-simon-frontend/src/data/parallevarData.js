@@ -14,6 +14,7 @@ export const parallevarData = {
         { "nombre": "Ensalada Murciana", "precio": "5.50 / 3.00","alergenos": ["pescados", "huevos"]  },
         { "nombre": "Ensalada de Pasta", "precio": "5.50 / 3.00" },
         { "nombre": "Ensalada de Patata", "precio": "5.50 / 3.00" },
+        { "nombre": "Ensalada de Arroz", "precio": "5.50 / 3.00" },
         { "nombre": "Mixta Pequeña", "precio": "5.50","alergenos": ["pescados"] },
         { "nombre": "Mixta Grande", "precio": "9.00","alergenos": ["pescados"] },
         { "nombre": "César Pequeña", "precio": "5.50","alergenos": ["fruto seco", "leche", "sulfito"] },
@@ -42,7 +43,6 @@ export const parallevarData = {
         { "nombre": "Macarrones Boloñesa", "precio": "5.50 / 3.00","alergenos": ["gluten"] },
         { "nombre": "Spaghetti Carbonara", "precio": "5.50 / 3.00","alergenos": ["gluten","huevos","leche","sulfito"] },
         { "nombre": "Arroz Tres Delicias", "precio": "5.50 / 3.00","alergenos": ["crustaceos","pescados","huevos","sulfito"] },
-        { "nombre": "Ensalada de Arroz", "precio": "5.50 / 3.00" },
         { "nombre": "Tortellini o Ravioli", "precio": "5.50 / 3.00","alergenos": ["gluten","sulfito"] },
         { "nombre": "Tallarines Teriyaki", "precio": "5.50 / 3.00","alergenos": ["gluten","soja","sulfito"] }
       ]
@@ -60,6 +60,7 @@ export const parallevarData = {
         { "nombre": "Magra con Tomate", "precio": "5.50 / 3.00" },
         { "nombre": "Albóndigas con Verdura", "precio": "5.50 / 3.00","alergenos": ["gluten","huevos","sulfito"] },
         { "nombre": "Callos", "precio": "5.50" },
+        { "nombre": "Alubias", "precio": "5.50 / 3.00" },
         { "nombre": "Pelotas con Caldo", "precio": "5.50" },
         { "nombre": "Cocido", "precio": "6.00" },
         { "nombre": "Gazpacho Manchego", "precio": "5.50 / 3.00","alergenos": ["gluten","sulfito"] },
@@ -73,9 +74,15 @@ export const parallevarData = {
         { "nombre": "Queso Frito", "precio": "5.50","alergenos": ["gluten"] },
         { "nombre": "Croquetas de Jamón", "precio": "1.20 ud" },
         { "nombre": "Huevos Rotos", "precio": "5.50" },
-        { "nombre": "Rustidera de Pollo", "precio": "5.00" },
+        { "nombre": "Rustidera de Pollo", "precio": "5.50","alergenos": ["sulfito"] },
+        { "nombre": "Pechuga Empanada", "precio": "5.50","alergenos": ["gluten","huevos"] },
+        { "nombre": "Codillo de Cerdo", "precio": "6.00","alergenos": ["sulfito"] },
+        { "nombre": "Manitas", "precio": "5.50","alergenos": ["gluten","sulfito"] },
         { "nombre": "Patatas Asadas", "precio": "5.00" },
-        { "nombre": "Bacalao con Tomate", "precio": "4.00","alergenos": ["gluten","huevos","pescado"] },
+        { "nombre": "Bacalao con Tomate", "precio": "6.00","alergenos": ["pescado"] },
+        { "nombre": "Salmón al Horno", "precio": "6.00","alergenos": ["pescado"] },
+        { "nombre": "Bacalao al Horno", "precio": "6.00","alergenos": ["pescado"] },
+        { "nombre": "Merluza", "precio": "6.00","alergenos": ["pescado"] },
         { "nombre": "Consome Relleno", "precio": "5.50","alergenos": ["gluten","huevos"] }
       ]
     },
@@ -101,17 +108,19 @@ export const parallevarData = {
       "nombre": "Postres",
       "descripcion": "El final dulce perfecto",
       "platos": [
-        { "nombre": "Tarta de Tres Chocolates", "precio": "3.00" },
-        { "nombre": "Tarta de Galleta", "precio": "3.00" },
+        { "nombre": "Tarta de Tres Chocolates", "precio": "3.00", "alergenos": ["gluten","soja","leche"] },
+        { "nombre": "Tarta de Galleta", "precio": "3.00", "alergenos": ["gluten","huevos","leche","sulfito"] },
         { "nombre": "Tarta de Almendra", "precio": "3.00" },
         { "nombre": "Natillas", "precio": "3.00" },
         { "nombre": "Chocolate y Queso Albert Adrià", "precio": "4.00" },
-        { "nombre": "Tarta de Queso Albert Adrià", "precio": "4.00" },
+        { "nombre": "Tarta de Queso Albert Adrià", "precio": "4.00", "alergenos": ["gluten","huevos","cacahuete","fruto seco","soja","leche","sulfito"] },
         { "nombre": "Pan de Calatrava", "precio": "3.00" },
-        { "nombre": "Tarta Lotus", "precio": "4.00" },
+        { "nombre": "Tarta Lotus", "precio": "4.00", "alergenos": ["gluten","huevos","soja","leche","sulfito"] },
         { "nombre": "Tarta Pistacho", "precio": "4.00" },
         { "nombre": "Tarta Oreo", "precio": "4.00" },
-        { "nombre": "Arroz con Leche", "precio": "3.00" }
+        { "nombre": "Arroz con Leche", "precio": "3.00" },
+        { "nombre": "Tarta de Zanahoria", "precio": "??", "alergenos": ["gluten","huevos","cacahuete","fruto seco","leche","sulfito"] },
+        { "nombre": "Tarta de la Abuela", "precio": "??", "alergenos": ["gluten","huevos","leche","sulfito"] },
       ]
     },
     
