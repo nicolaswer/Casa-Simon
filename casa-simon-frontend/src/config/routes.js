@@ -10,5 +10,11 @@ export const APP_ROUTES = {
     LOCAL2: "https://maps.app.goo.gl/x7q2nqYraxRJAna46",
     LOCAL2_PHONE: "+34 645 53 94 69",
     FACEBOOK: "https://www.facebook.com/casasimoncomidas/?locale=es_LA",
-    INSTAGRAM: "https://www.instagram.com/casasimoncomidas/"
+    INSTAGRAM: "https://www.instagram.com/casasimoncomidas/",
+    AVISO_LEGAL: '/aviso-legal',
+    PRIVACIDAD: '/privacidad',
+    BLOG: '/blog',
+    BLOG_POST_PAELLA: '/blog/paellas-lena-elche',
+    BLOG_POST_CARNES: '/blog/carnes-brasa-elche-chuletón',
+    BLOG_POST_LOCALES: '/blog/comida-para-llevar-elche-altabix'
 };

@@ -1,5 +1,5 @@
 {
-    "name": "Casa Simón",
+    "name": "Casa Simón Elche",
     "short_name": "Casa Simón",
     "icons": [
         {
@@ -13,7 +13,8 @@
             "type": "image/png"
         }
     ],
-    "theme_color": "#ffffff",
-    "background_color": "#ffffff",
-    "display": "standalone"
+    "theme_color": "#EAB308",
+    "background_color": "#000000",
+    "display": "standalone",
+    "start_url": "/"
 }

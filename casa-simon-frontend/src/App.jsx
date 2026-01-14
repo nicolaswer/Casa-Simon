@@ -13,7 +13,12 @@ import { desayunosData as desayunosAlmuerzosData } from './data/desayunosAlmuerz
 
 const LazyHome = lazy(() => import('./components/home'));
 const LazyMenu = lazy(() => import('./components/Menu'));
-
+const LazyBlog = lazy(() => import('./components/Blog'));
+const LazyAvisoLegal = lazy(() => import('./components/AvisoLegal'));
+const LazyPrivacidad = lazy(() => import('./components/Privacidad'));
+const LazyPostPaella = lazy(() => import('./components/blog-posts/PostPaella'));
+const LazyPostCarnes = lazy(() => import('./components/blog-posts/PostCarnes'));
+const LazyPostLocales = lazy(() => import('./components/blog-posts/PostLocales'));
 
 function App() {
   return (
@@ -59,8 +64,15 @@ function App() {
                         title="Desayunos y Almuerzos" 
                         showTaxWarning={false} // Sí lleva IVA aviso
                     />
-                } 
+                }
             />
+            <Route path={APP_ROUTES.BLOG} element={<LazyBlog />} />
+            <Route path={APP_ROUTES.AVISO_LEGAL} element={<LazyAvisoLegal />} />
+            <Route path={APP_ROUTES.PRIVACIDAD} element={<LazyPrivacidad />} />
+            <Route path={APP_ROUTES.BLOG_POST_PAELLA} element={<LazyPostPaella />} />
+            <Route path={APP_ROUTES.BLOG_POST_CARNES} element={<LazyPostCarnes />} />
+            <Route path={APP_ROUTES.BLOG_POST_LOCALES} element={<LazyPostLocales />} />
+
         </Routes>
       </Suspense>
       <Footer />
