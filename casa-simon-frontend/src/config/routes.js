@@ -3,6 +3,7 @@ export const APP_ROUTES = {
     CARTA_RESTAURANTE: '/carta-restaurante',
     CARTA_LLEVAR: '/carta-llevar',
     CARTA_DESAYUNOS_ALMUERZOS: '/carta-desayunos-almuerzos',
+    CARTA_PAELLAS_DOMICILIO: '/carta-paellas-domicilio-elche',
     MAIN_RESTAURANT: "https://maps.app.goo.gl/YNQkjVPUNcEciiMw9",
     MAIN_RESTAURANT_PHONE: "+34 671 40 15 36",
     LOCAL1: "https://maps.app.goo.gl/usUG4Zkwtos5XoUC6?g_st=iw",
@@ -16,5 +17,10 @@ export const APP_ROUTES = {
     BLOG: '/blog',
     BLOG_POST_PAELLA: '/blog/paellas-lena-elche',
     BLOG_POST_CARNES: '/blog/carnes-brasa-elche-chuletón',
-    BLOG_POST_LOCALES: '/blog/comida-para-llevar-elche-altabix'
+    BLOG_POST_LOCALES: '/blog/comida-para-llevar-elche-altabix',
+    BLOG_POST_DOMICILIO: '/blog/paellas-para-llevar-elche-domicilio',
+    BLOG_POST_ALMUERZOS: '/blog/almuerzos-populares-elche-bocadillos',
+    BLOG_POST_POSTRES: '/blog/postres-caseros-tarta-elche'
+
+
 };

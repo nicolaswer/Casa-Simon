@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
+// 1. IMPORT UNIFICADO Y CORRECTO (Link y useLocation juntos)
+import { Link, useLocation } from 'react-router-dom'; 
 import { 
   Salad, Wheat, UtensilsCrossed, ChefHat, IceCream, ArrowLeft,
   Coffee, Soup, Drumstick, Fish, 
   // Iconos BÁSICOS (Seguros)
   Milk, Egg, Info, Shell, AlertCircle, Wine, CookingPot, Nut, Sandwich
 } from 'lucide-react';
-import { Link } from 'react-router-dom';
 import { APP_ROUTES } from '../config/routes';
 
 // --- 1. ICONOS DE CATEGORÍAS ---
@@ -28,16 +29,12 @@ const getCategoryIcon = (id) => {
 };
 
 // --- 2. CONFIGURACIÓN DE ALÉRGENOS (VERSIÓN SEGURA) ---
-// Usamos TEXTO para los iconos conflictivos para evitar errores de librería
 const ALLERGEN_CONFIG = {
-  // Iconos Seguros
   gluten:       { icon: <Wheat size={14} />, label: "Gluten" },
   leche:        { icon: <Milk size={14} />, label: "Leche" },
   huevos:       { icon: <Egg size={14} />, label: "Huevo" },
   pescados:     { icon: <Fish size={14} />, label: "Pescado" },
-  moluscos:     { icon: <Shell size={14} />, label: "Moluscos" }, // Shell suele existir siempre
-
-  // Texto "Químico" (Más seguro y profesional)
+  moluscos:     { icon: <Shell size={14} />, label: "Moluscos" },
   crustaceos:   { icon: <span className="text-[8px] font-extrabold">CRU</span>, label: "Crustáceos" },
   'fruto seco': { icon: <span className="text-[8px] font-extrabold">FRU</span>, label: "Frutos Secos" },
   soja:         { icon: <span className="text-[8px] font-extrabold">SOJ</span>, label: "Soja" },
@@ -47,8 +44,6 @@ const ALLERGEN_CONFIG = {
   apio:         { icon: <span className="text-[8px] font-extrabold">API</span>, label: "Apio" },
   sesamo:       { icon: <span className="text-[8px] font-extrabold">SES</span>, label: "Sésamo" },
   altramuces:   { icon: <span className="text-[8px] font-extrabold">ALT</span>, label: "Altramuces" },
-
-  // Fallback
   default:      { icon: <AlertCircle size={14} />, label: "Alérgeno" }
 };
 
@@ -71,11 +66,35 @@ const Menu = ({ data, title, showTaxWarning = false }) => {
   const [isManualScroll, setIsManualScroll] = useState(true);
   const [showAllergens, setShowAllergens] = useState(false);
 
+  // 2. HOOK PARA LEER LA URL
+  const location = useLocation();
+
+  // 3. EFECTO PARA DETECTAR EL HASH (#postres) Y HACER SCROLL
+  useEffect(() => {
+    if (data && data.categorias && location.hash) {
+        // Quitamos el símbolo # para tener solo el id (ej: 'postres')
+        const targetId = location.hash.replace('#', '');
+        
+        // Comprobamos si esa categoría existe en tus datos
+        const categoryExists = data.categorias.some(cat => cat.id === targetId);
+
+        if (categoryExists) {
+            // Damos un pequeño respiro (500ms) para asegurar que la página ha cargado
+            setTimeout(() => {
+                scrollToCategory(targetId);
+            }, 500);
+        }
+    }
+  }, [data, location]);
+
   useEffect(() => {
     if (data && data.categorias && data.categorias.length > 0) {
-      setActiveCategory(data.categorias[0].id);
+      // Si NO hay hash, activamos la primera categoría por defecto
+      if (!location.hash) {
+          setActiveCategory(data.categorias[0].id);
+      }
     }
-  }, [data]);
+  }, [data, location.hash]); // Añadido location.hash a dependencias
 
   useEffect(() => {
     const handleScroll = () => {
@@ -123,12 +142,7 @@ const Menu = ({ data, title, showTaxWarning = false }) => {
     
     const element = document.getElementById(id);
     if (element) {
-      // --- AJUSTE DE ALTURA (OFFSET) ---
-      // Calculamos cuánto espacio ocupa tu cabecera fija para restar esa cantidad.
-      // - Si la leyenda de alérgenos está abierta, la cabecera es GIGANTE (aprox 340px).
-      // - Si está cerrada, es grande (aprox 240px).
-      // Aumentamos estos valores para que el Título respire y se vea bien.
-      
+      // Ajuste de altura dependiendo de si los alérgenos están abiertos
       const yOffset = showAllergens ? -380 : -280; 
       
       const y = element.getBoundingClientRect().top + window.scrollY + yOffset;

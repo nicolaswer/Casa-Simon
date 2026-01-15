@@ -66,6 +66,18 @@ const backgroundUrl = "/HomeImg/fondo.webp";
                     >
                         Carta Local
                     </Link>
+
+                    {/* Opción 2: CARTA LOCAL */}
+                    <Link
+                        to={APP_ROUTES.CARTA_PAELLAS_DOMICILIO}
+                        className="px-10 py-4 border border-white/30 bg-white/5 backdrop-blur-sm
+                                text-white font-sans font-medium text-sm uppercase tracking-[0.2em]
+                                hover:bg-white hover:text-black hover:border-white
+                                transition-all duration-300 ease-out text-center min-w-60"
+                        aria-label="Ver la carta para paellas a domicilio"
+                    >
+                        Paellas a Domicilio
+                    </Link>
                     
                 </div>
                 

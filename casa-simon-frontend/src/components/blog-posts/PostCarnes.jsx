@@ -137,8 +137,10 @@ export default function PostCarnes() {
                         <p className="text-gray-400 mb-6">Ven a probar el punto de la carne en Casa Simón.</p>
                         
                         <div className="flex flex-col sm:flex-row justify-center gap-4">
-                            <Link to={APP_ROUTES.CARTA_RESTAURANTE} className="bg-red-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-red-700 transition-colors">
-                                Ver Carta Restaurante
+<Link 
+    to={`${APP_ROUTES.CARTA_RESTAURANTE}#carnes`} // <--- AÑADIDO #carnes
+    className="bg-transparent border border-white text-white font-bold py-3 px-8 rounded-lg hover:bg-white hover:text-black transition-colors"
+>                                Ver Carta Restaurante
                             </Link>
                             <Link to={APP_ROUTES.RESERVAR} className="bg-transparent border border-white text-white font-bold py-3 px-8 rounded-lg hover:bg-white hover:text-black transition-colors">
                                 Reservar Ahora

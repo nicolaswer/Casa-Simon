@@ -121,8 +121,10 @@ export default function PostPaella() {
                         <h3 className="text-xl font-bold text-white mb-2">¿Te ha entrado hambre?</h3>
                         <p className="mb-4 text-sm">No te quedes con las ganas. Puedes reservar mesa en nuestro restaurante o encargar tu paella para llevar este domingo.</p>
                         <div className="flex flex-col sm:flex-row gap-4">
-                            <Link to={APP_ROUTES.CARTA_RESTAURANTE} className="bg-yellow-500 text-black font-bold py-2 px-6 rounded hover:bg-white transition-colors text-center">
-                                Ver Carta Restaurante
+<Link 
+    to={`${APP_ROUTES.CARTA_RESTAURANTE}#paellas`} // <--- AÑADIDO #paellas
+    className="bg-yellow-500 text-black font-bold py-2 px-6 rounded hover:bg-white transition-colors text-center"
+>                                Ver Carta Restaurante
                             </Link>
                             <Link to={APP_ROUTES.CONTACTO} className="border border-white text-white font-bold py-2 px-6 rounded hover:bg-white hover:text-black transition-colors text-center">
                                 Reservar Ahora

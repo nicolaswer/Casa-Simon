@@ -9,7 +9,9 @@ import ScrollToTop from './components/BotonSubir';
 
 import { parallevarData } from './data/parallevarData'; 
 import { restauranteData } from './data/restauranteData';
+
 import { desayunosData as desayunosAlmuerzosData } from './data/desayunosAlmuerzosData';
+import { paellasDomicilioData } from './data/paellasDomicilioData';
 
 const LazyHome = lazy(() => import('./components/home'));
 const LazyMenu = lazy(() => import('./components/Menu'));
@@ -19,6 +21,10 @@ const LazyPrivacidad = lazy(() => import('./components/Privacidad'));
 const LazyPostPaella = lazy(() => import('./components/blog-posts/PostPaella'));
 const LazyPostCarnes = lazy(() => import('./components/blog-posts/PostCarnes'));
 const LazyPostLocales = lazy(() => import('./components/blog-posts/PostLocales'));
+const LazyPostDomicilio = lazy(() => import('./components/blog-posts/PostDomicilio'));
+const LazyPostAlmuerzos = lazy(() => import('./components/blog-posts/PostAlmuerzos'));
+const LazyPostPostres = lazy(() => import('./components/blog-posts/PostPostres'));
+
 
 function App() {
   return (
@@ -66,12 +72,25 @@ function App() {
                     />
                 }
             />
+            <Route 
+                path={APP_ROUTES.CARTA_PAELLAS_DOMICILIO} 
+                element={
+                    <LazyMenu 
+                        data={paellasDomicilioData} 
+                        title="Paellas a Domicilio" 
+                        showTaxWarning={true} // Sí lleva IVA aviso
+                    />
+                }
+            />
             <Route path={APP_ROUTES.BLOG} element={<LazyBlog />} />
             <Route path={APP_ROUTES.AVISO_LEGAL} element={<LazyAvisoLegal />} />
             <Route path={APP_ROUTES.PRIVACIDAD} element={<LazyPrivacidad />} />
             <Route path={APP_ROUTES.BLOG_POST_PAELLA} element={<LazyPostPaella />} />
             <Route path={APP_ROUTES.BLOG_POST_CARNES} element={<LazyPostCarnes />} />
             <Route path={APP_ROUTES.BLOG_POST_LOCALES} element={<LazyPostLocales />} />
+            <Route path={APP_ROUTES.BLOG_POST_DOMICILIO} element={<LazyPostDomicilio />} />
+            <Route path={APP_ROUTES.BLOG_POST_ALMUERZOS} element={<LazyPostAlmuerzos />} />
+            <Route path={APP_ROUTES.BLOG_POST_POSTRES} element={<LazyPostPostres />} />
 
         </Routes>
       </Suspense>

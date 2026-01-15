@@ -5,8 +5,18 @@ import { APP_ROUTES } from '../config/routes';
 
 // --- DATOS DEL BLOG ---
 const blogPosts = [
+    
     {
-        id: 1,
+        id: 1, // Dale un ID nuevo
+        category: "A Domicilio",
+        title: "¡Paellas a Domicilio en Elche con ENVÍO GRATIS!",
+        excerpt: "¿No te apetece salir? Te llevamos tu arroz a la leña recién hecho a la puerta de casa. Sin costes extra en toda Elche.",
+        // Usamos la misma imagen impactante del artículo
+        image: "https://images.unsplash.com/photo-1599321955726-e048566f25ce?q=80&w=800&auto=format&fit=crop",
+        link: APP_ROUTES.BLOG_POST_DOMICILIO
+    },    
+    {
+        id: 2,
         category: "Nuestra Cocina",
         title: "El secreto de nuestras Paellas a la Leña",
         excerpt: "No hay atajos para el sabor auténtico. Descubre por qué el sarmiento y el fuego vivo hacen que nuestros arroces tengan ese 'socarrat' y aroma inconfundible.",
@@ -15,7 +25,7 @@ const blogPosts = [
         link: APP_ROUTES.BLOG_POST_PAELLA 
     },
     {
-        id: 2,
+        id: 3,
         category: "Brasería",
         title: "Carnes a la Brasa: El punto perfecto",
         excerpt: "Chuletones, entrecots y las mejores piezas seleccionadas. Te contamos cómo tratamos el producto en nuestras parrillas para conseguir esa textura tierna y ahumada.",
@@ -23,12 +33,28 @@ const blogPosts = [
         link: APP_ROUTES.BLOG_POST_CARNES
     },
     {
-        id: 3,
+        id: 4,
         category: "Para Llevar",
         title: "Comida Casera en Altabix y Congresos",
         excerpt: "¿Sin tiempo para cocinar? En nuestros locales de recogida tenemos guisos, pastas y asados listos cada mañana. Cocina de abuela, pero para llevar.",
         image: "https://images.unsplash.com/photo-1543339308-43e59d6b73a6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
         link: APP_ROUTES.BLOG_POST_LOCALES
+    },
+    {
+        id: 5, // Nuevo ID
+        category: "Tradición",
+        title: "El Almuerzo Popular: Bocadillos y Tapas",
+        excerpt: "Blanco y negro, tortilla, lomo... descubre el ritual del 'esmorzaret' con nuestro pan a la brasa y tapas caseras.",
+        image: "/BlogImg/almuerzo-popular-elche.webp", // (O la url de Unsplash si no la has descargado aun)
+        link: APP_ROUTES.BLOG_POST_ALMUERZOS
+    },
+    {
+        id: 6, // Nuevo ID
+        category: "Repostería",
+        title: "El final dulce: Tarta de Elche y Postres Caseros",
+        excerpt: "¿Eres de los que guardan hueco para el postre? Prueba nuestra tarta de almendra y nuestros dulces 100% caseros.",
+        image: "/BlogImg/tarta-de-elche-casera.webp", // O la URL de unsplash directa
+        link: APP_ROUTES.BLOG_POST_POSTRES
     }
 ];
 
