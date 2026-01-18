@@ -17,6 +17,7 @@ import { paellasDomicilioData } from './data/paellasDomicilioData';
 const LazyHome = lazy(() => import('./components/home'));
 const LazyMenu = lazy(() => import('./components/Menu'));
 const LazyBlog = lazy(() => import('./components/Blog'));
+const LazyReserve = lazy(() => import('./components/ReservationForm'));
 const LazyAvisoLegal = lazy(() => import('./components/AvisoLegal'));
 const LazyPrivacidad = lazy(() => import('./components/Privacidad'));
 const LazyPostPaella = lazy(() => import('./components/blog-posts/PostPaella'));
@@ -65,8 +66,11 @@ function App() {
       }>
 
         <Routes>
+
             <Route path={APP_ROUTES.HOME} element={<LazyHome />} />
-            
+
+            <Route path={APP_ROUTES.RESERVA_RESTAURANTE} element={<LazyReserve />} />
+
             <Route
                 path={APP_ROUTES.CARTA_RESTAURANTE}
                 element={<CartaRestaurantePage />}

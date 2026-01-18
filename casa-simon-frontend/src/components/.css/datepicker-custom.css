@@ -1,0 +1,40 @@
+.react-datepicker {
+  background-color: #1c1917 !important; /* Stone-900 */
+  border: 1px solid #44403c !important; /* Stone-700 */
+  color: white !important;
+}
+
+.react-datepicker__header {
+  background-color: #292524 !important; /* Stone-800 */
+  border-bottom: 1px solid #44403c !important;
+}
+
+.react-datepicker__current-month, 
+.react-datepicker__day-name, 
+.react-datepicker__day {
+  color: white !important;
+}
+
+.react-datepicker__day--disabled {
+  color: #57534e !important; /* Stone-600 (Gris oscuro) */
+}
+
+/* 1. Mantenemos el amarillo SOLO para el día elegido y el hover */
+.react-datepicker__day--selected,
+.react-datepicker__day:hover {
+  background-color: #eab308 !important; /* Yellow-500 */
+  color: #000000 !important; /* Texto negro para lectura */
+  border-radius: 0.3rem;
+}
+
+/* 2. SOLUCIÓN AL ERROR: Quitamos el fondo amarillo del foco del teclado */
+/* Esto evita que se marque el mismo día en todos los meses */
+.react-datepicker__day--keyboard-selected {
+  background-color: transparent !important;
+  color: white !important;
+}
+
+/* 3. Aseguramos que los días que sobran de otros meses no se marquen */
+.react-datepicker__day--outside-month {
+  color: #44403c !important;
+}

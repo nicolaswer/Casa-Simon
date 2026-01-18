@@ -6,7 +6,7 @@ import { Utensils, ShoppingBag } from 'lucide-react'; // Iconos para reforzar vi
 function MainHomeSection() {
 const backgroundUrl = "/HomeImg/fondo.webp";
     return (
-        <section className="relative w-full h-[85vh] min-h-[600px] flex items-center justify-center overflow-hidden">
+        <section className="relative w-full h-[85vh] min-h-150 flex items-center justify-center overflow-hidden">
             
             {/* Fondo y Overlay */}
             <img 

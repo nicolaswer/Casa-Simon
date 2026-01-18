@@ -1,6 +1,7 @@
 export const APP_ROUTES = {
     HOME: '/',
     CARTA_RESTAURANTE: '/carta-restaurante',
+    RESERVA_RESTAURANTE: '/reservar',
     CARTA_LLEVAR: '/carta-llevar',
     CARTA_DESAYUNOS_ALMUERZOS: '/carta-desayunos-almuerzos',
     CARTA_PAELLAS_DOMICILIO: '/carta-paellas-domicilio-elche',
