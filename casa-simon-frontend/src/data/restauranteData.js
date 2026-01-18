@@ -57,14 +57,38 @@ export const restauranteData = {
       "nombre": "Paellas a la Leña",
       "descripcion": "Nuestras especialidades",
       "platos": [
-        { "nombre": "Paella de conejo y caracoles", "precio": "15.15" },
-        { "nombre": "Paella de pollo de campo y conejo", "precio": "15.15" },
-        { "nombre": "Paella de verdura y magra", "precio": "15.15" },
-        { "nombre": "Paella de verdura", "precio": "15.15" },
-        // A banda: Crustáceos, Moluscos, Pescados (según 'Paella Moluscos' de matriz)
-        { "nombre": "Paella a banda", "precio": "15.15", "alergenos": ["crustaceos", "moluscos", "pescados"] },
-        // Gazpacho: Gluten según matriz
-        { "nombre": "Gazpacho con conejo y caracoles", "precio": "15.15", "alergenos": ["gluten"] }
+        { 
+          "nombre": "Paella de conejo y caracoles", 
+          "precio": "15.15",
+          "recomendaciones_precio": {"bajo": "Marina Alta (B)", "medio": "Coto de Imaz", "alto": "Remelluri", "exclusivo": "Juan Gil 18"}
+        },
+        { 
+          "nombre": "Paella de pollo de campo y conejo", 
+          "precio": "15.15",
+          "recomendaciones_precio": {"bajo": "Gran Feudo Chivite (R)", "medio": "Campillo", "alto": "Muga", "exclusivo": "Juan Gil 18"}
+        },
+        { 
+          "nombre": "Paella de verdura y magra", 
+          "precio": "15.15",
+          "recomendaciones_precio": {"bajo": "Mateu Rosé (R)", "medio": "La Planta", "alto": "Arzuaga", "exclusivo": "Pago de Carraovejas"}
+        },
+        { 
+          "nombre": "Paella de verdura", 
+          "precio": "15.15",
+          "recomendaciones_precio": {"bajo": "Tierra Buena (B)", "medio": "Marqués de Riscal (B)", "alto": "Pesquera", "exclusivo": "Moët & Chandon Imperial"}
+        },
+        { 
+          "nombre": "Paella a banda", 
+          "precio": "15.15", 
+          "alergenos": ["crustaceos", "moluscos", "pescados"],
+          "recomendaciones_precio": {"bajo": "Marina Alta (B)", "medio": "Marqués de Riscal (R)", "alto": "Protos", "exclusivo": "Moët & Chandon Imperial"}
+        },
+        { 
+          "nombre": "Gazpacho con conejo y caracoles", 
+          "precio": "15.15", 
+          "alergenos": ["gluten"],
+          "recomendaciones_precio": {"bajo": "Azpilicueta (3/8)", "medio": "Luis Cañas (1/2 L)", "alto": "Remelluri", "exclusivo": "Juan Gil 18"}
+        }
       ]
     },
     {
@@ -72,13 +96,32 @@ export const restauranteData = {
       "nombre": "Carnes a la Brasa",
       "descripcion": "Al punto de leña",
       "platos": [
-        // Cordero Brasa: Sulfitos según matriz
-        { "nombre": "Chuletas de cordero", "precio": "15.15", "alergenos": ["sulfito"] },
-        { "nombre": "Chuletón de Ternera", "precio": "25.25" },
-        { "nombre": "Entrecot de Ternera", "precio": "25.25" },
-        { "nombre": "Pechuga o muslo de Pollo", "precio": "15.15" },
-        { "nombre": "Huevo", "precio": "1.50", "alergenos": ["huevos"] }
-
+        { 
+          "nombre": "Chuletas de cordero", 
+          "precio": "15.15", 
+          "alergenos": ["sulfito"],
+          "recomendaciones_precio": {"bajo": "El Coto (3/8)", "medio": "E. Mendoza S. Cabernet", "alto": "Pago de los Capellanes", "exclusivo": "Juan Gil 18"}
+        },
+        { 
+          "nombre": "Chuletón de Ternera", 
+          "precio": "25.25",
+          "recomendaciones_precio": {"bajo": "Azpilicueta (3/8)", "medio": "Campillo", "alto": "Arzuaga", "exclusivo": "Pago de Carraovejas"}
+        },
+        { 
+          "nombre": "Entrecot de Ternera", 
+          "precio": "25.25",
+          "recomendaciones_precio": {"bajo": "El Coto (3/8)", "medio": "Pergamino", "alto": "Protos", "exclusivo": "Pago de Carraovejas"}
+        },
+        { 
+          "nombre": "Pechuga o muslo de Pollo", 
+          "precio": "15.15",
+          "recomendaciones_precio": {"bajo": "Gran Feudo Chivite (R)", "medio": "Merlot E. Mendoza", "alto": "Muga", "exclusivo": "Moët & Chandon Imperial"}
+        },
+        { 
+          "nombre": "Huevo frito", 
+          "precio": "1.50", 
+          "alergenos": ["huevos"]
+        }
       ]
     },
     {
@@ -86,9 +129,24 @@ export const restauranteData = {
       "nombre": "Pescados",
       "descripcion": "Del mar a la plancha",
       "platos": [
-        { "nombre": "Emperador a la plancha", "precio": "14.45", "alergenos": ["pescados"] },
-        { "nombre": "Merluza a la plancha", "precio": "15.15", "alergenos": ["pescados"] },
-        { "nombre": "Atun ijada a la plancha", "precio": "15.15", "alergenos": ["pescados"] },
+        { 
+          "nombre": "Emperador a la plancha", 
+          "precio": "14.45", 
+          "alergenos": ["pescados"],
+          "recomendaciones_precio": {"bajo": "Barbadillo (B)", "medio": "Marqués de Riscal (B)", "alto": "Muga", "exclusivo": "Moët & Chandon Imperial"}
+        },
+        { 
+          "nombre": "Merluza a la plancha", 
+          "precio": "15.15", 
+          "alergenos": ["pescados"],
+          "recomendaciones_precio": {"bajo": "Tierra Buena (B)", "medio": "Freixenet Cordón Negro", "alto": "Protos", "exclusivo": "Moët & Chandon Imperial"}
+        },
+        { 
+          "nombre": "Atun ijada a la plancha", 
+          "precio": "15.15", 
+          "alergenos": ["pescados"],
+          "recomendaciones_precio": {"bajo": "Marina Alta (B)", "medio": "Marqués de Riscal (R)", "alto": "Pesquera", "exclusivo": "Moët & Chandon Rosé"}
+        }
       ]
     },
     {

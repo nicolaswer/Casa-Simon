@@ -1,7 +1,8 @@
-import React, {lazy, Suspense} from 'react';
+import React, {lazy, Suspense, useState} from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/header';
 import Footer from './components/footer';
+import WineChatbot from './components/WineChatbot';
 import { APP_ROUTES } from './config/routes';
 
 // 1. IMPORTA EL COMPONENTE NUEVO
@@ -25,6 +26,32 @@ const LazyPostDomicilio = lazy(() => import('./components/blog-posts/PostDomicil
 const LazyPostAlmuerzos = lazy(() => import('./components/blog-posts/PostAlmuerzos'));
 const LazyPostPostres = lazy(() => import('./components/blog-posts/PostPostres'));
 
+// --- Wrapper de página para Carta Restaurante ---
+const CartaRestaurantePage = () => {
+  const [menuLoaded, setMenuLoaded] = useState(false);
+
+  return (
+    <>
+      <Suspense
+        fallback={
+          <div className="min-h-screen bg-black flex items-center justify-center text-white">
+            Cargando carta...
+          </div>
+        }
+      >
+        <LazyMenu
+          data={restauranteData}
+          title="Carta de Restaurante"
+          showTaxWarning={true}
+          onLoad={() => setMenuLoaded(true)} // Callback cuando Menu ya cargó
+        />
+      </Suspense>
+
+      {/* Chatbot solo se monta después de que el menú cargue */}
+      {menuLoaded && <WineChatbot />}
+    </>
+  );
+};
 
 function App() {
   return (
@@ -40,15 +67,9 @@ function App() {
         <Routes>
             <Route path={APP_ROUTES.HOME} element={<LazyHome />} />
             
-            <Route 
-                path={APP_ROUTES.CARTA_RESTAURANTE} 
-                element={ 
-                    <LazyMenu 
-                        data={restauranteData}
-                        title="Carta de Restaurante"
-                        showTaxWarning={true} 
-                    />
-                } 
+            <Route
+                path={APP_ROUTES.CARTA_RESTAURANTE}
+                element={<CartaRestaurantePage />}
             />
             
             <Route 

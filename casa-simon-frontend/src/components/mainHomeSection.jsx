@@ -13,7 +13,7 @@ const backgroundUrl = "/HomeImg/fondo.webp";
                 src={backgroundUrl}
                 alt="Paella tradicional española de mariscos, símbolo de la cocina ilicitana" 
                 className="absolute inset-0 w-full h-full object-cover object-center"
-                fetchPriority="high"
+                fetchpriority="high"
             />
             <div className="absolute inset-0 bg-black/60 z-10"></div>
             <div className="absolute bottom-0 left-0 w-full h-32 bg-linear-to-t from-black to-transparent z-10"></div>

@@ -61,7 +61,7 @@ const AllergenBadge = ({ type }) => {
   );
 };
 
-const Menu = ({ data, title, showTaxWarning = false }) => {
+const Menu = ({ data, title, showTaxWarning = false, onLoad }) => {
   const [activeCategory, setActiveCategory] = useState('');
   const [isManualScroll, setIsManualScroll] = useState(true);
   const [showAllergens, setShowAllergens] = useState(false);
@@ -93,8 +93,11 @@ const Menu = ({ data, title, showTaxWarning = false }) => {
       if (!location.hash) {
           setActiveCategory(data.categorias[0].id);
       }
+
+      if (typeof onLoad === 'function') onLoad();
+
     }
-  }, [data, location.hash]); // Añadido location.hash a dependencias
+  }, [data, location.hash, onLoad]); // Añadido location.hash a dependencias
 
   useEffect(() => {
     const handleScroll = () => {
