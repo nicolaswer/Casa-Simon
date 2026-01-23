@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-// 1. IMPORT UNIFICADO Y CORRECTO (Link y useLocation juntos)
 import { Link, useLocation } from 'react-router-dom'; 
 import { 
   Salad, Wheat, UtensilsCrossed, ChefHat, IceCream, ArrowLeft,
   Coffee, Soup, Drumstick, Fish, 
-  // Iconos BÁSICOS (Seguros)
-  Milk, Egg, Info, Shell, AlertCircle, Wine, CookingPot, Nut, Sandwich
+  // Iconos BÁSICOS
+  Milk, Egg, Shell, AlertCircle, Wine, CookingPot, Nut, Sandwich,
+  Info // <--- Solo una vez aquí
 } from 'lucide-react';
 import { APP_ROUTES } from '../config/routes';
 
@@ -28,7 +28,7 @@ const getCategoryIcon = (id) => {
   return <UtensilsCrossed className="w-5 h-5" />;
 };
 
-// --- 2. CONFIGURACIÓN DE ALÉRGENOS (VERSIÓN SEGURA) ---
+// --- 2. CONFIGURACIÓN DE ALÉRGENOS ---
 const ALLERGEN_CONFIG = {
   gluten:       { icon: <Wheat size={14} />, label: "Gluten" },
   leche:        { icon: <Milk size={14} />, label: "Leche" },
@@ -61,25 +61,19 @@ const AllergenBadge = ({ type }) => {
   );
 };
 
-const Menu = ({ data, title, showTaxWarning = false, onLoad }) => {
+const Menu = ({ data, title, showTaxWarning = false, onLoad, allergenLink = null }) => {
   const [activeCategory, setActiveCategory] = useState('');
   const [isManualScroll, setIsManualScroll] = useState(true);
   const [showAllergens, setShowAllergens] = useState(false);
 
-  // 2. HOOK PARA LEER LA URL
   const location = useLocation();
 
-  // 3. EFECTO PARA DETECTAR EL HASH (#postres) Y HACER SCROLL
   useEffect(() => {
     if (data && data.categorias && location.hash) {
-        // Quitamos el símbolo # para tener solo el id (ej: 'postres')
         const targetId = location.hash.replace('#', '');
-        
-        // Comprobamos si esa categoría existe en tus datos
         const categoryExists = data.categorias.some(cat => cat.id === targetId);
 
         if (categoryExists) {
-            // Damos un pequeño respiro (500ms) para asegurar que la página ha cargado
             setTimeout(() => {
                 scrollToCategory(targetId);
             }, 500);
@@ -89,15 +83,12 @@ const Menu = ({ data, title, showTaxWarning = false, onLoad }) => {
 
   useEffect(() => {
     if (data && data.categorias && data.categorias.length > 0) {
-      // Si NO hay hash, activamos la primera categoría por defecto
       if (!location.hash) {
           setActiveCategory(data.categorias[0].id);
       }
-
       if (typeof onLoad === 'function') onLoad();
-
     }
-  }, [data, location.hash, onLoad]); // Añadido location.hash a dependencias
+  }, [data, location.hash, onLoad]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -145,13 +136,9 @@ const Menu = ({ data, title, showTaxWarning = false, onLoad }) => {
     
     const element = document.getElementById(id);
     if (element) {
-      // Ajuste de altura dependiendo de si los alérgenos están abiertos
       const yOffset = showAllergens ? -380 : -280; 
-      
       const y = element.getBoundingClientRect().top + window.scrollY + yOffset;
-      
       window.scrollTo({ top: y, behavior: 'smooth' });
-
       setTimeout(() => setIsManualScroll(true), 800);
     }
   };
@@ -281,6 +268,23 @@ const Menu = ({ data, title, showTaxWarning = false, onLoad }) => {
           </section>
         ))}
       </div>
+
+      {/* --- BOTÓN CONDICIONAL DE ALÉRGENOS --- */}
+      {allergenLink && (
+        <div className="flex justify-center mt-16 mb-8 px-4 animate-fadeIn">
+            <Link 
+                to={allergenLink}
+                rel="nofollow" 
+                className="group flex items-center gap-2 px-6 py-3 rounded-full border border-yellow-500/30 
+                           bg-stone-900/50 text-yellow-500 text-xs font-bold uppercase tracking-widest 
+                           hover:bg-yellow-500 hover:text-black hover:border-yellow-500 
+                           transition-all duration-300 shadow-lg backdrop-blur-sm"
+            >
+                <Info size={16} className="group-hover:scale-110 transition-transform" />
+                Ver Tabla Oficial de Alérgenos
+            </Link>
+        </div>
+      )}
       
       {/* FOOTER */}
       <div className="text-center py-20 space-y-3">

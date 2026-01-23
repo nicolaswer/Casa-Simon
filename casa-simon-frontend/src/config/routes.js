@@ -21,7 +21,10 @@ export const APP_ROUTES = {
     BLOG_POST_LOCALES: '/blog/comida-para-llevar-elche-altabix',
     BLOG_POST_DOMICILIO: '/blog/paellas-para-llevar-elche-domicilio',
     BLOG_POST_ALMUERZOS: '/blog/almuerzos-populares-elche-bocadillos',
-    BLOG_POST_POSTRES: '/blog/postres-caseros-tarta-elche'
+    BLOG_POST_POSTRES: '/blog/postres-caseros-tarta-elche',
+    ALERGENOS_PARALLEVAR: '/alergenos-local', 
+    ALERGENOS_RESTAURANTE: '/alergenos-restaurante',
+
 
 
 };
