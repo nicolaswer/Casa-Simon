@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Users, MapPin, Phone, Clock, Baby, User, ArrowLeft, Calendar as CalendarIcon, AlertCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { enviarReservaWhatsApp } from './reservationService';
 
 // Configuración de Calendario
 import DatePicker, { registerLocale } from 'react-datepicker';
@@ -34,6 +35,7 @@ const ReservationPage = () => {
 
   // --- ESTADOS ---
   const [startDate, setStartDate] = useState(null);
+  const [isSending, setIsSending] = useState(false);
   const [formData, setFormData] = useState({
     nombre: '',
     telefono: '',
@@ -99,12 +101,21 @@ const ReservationPage = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (validate()) {
-      alert("Solicitud de reserva enviada correctamente.");
-      formData.telefono = formData.telefono.replaceAll(' ', '');
-      console.log("Datos:", { ...formData, fecha: startDate });
+      setIsSending(true);
+      try {
+        await enviarReservaWhatsApp(formData, startDate);
+        alert("¡Reserva enviada con éxito! Recibirás una confirmación pronto.");
+        // Reset
+        setFormData({ nombre: '', telefono: '', lugar: 'Terraza', personas: '', hora: '', sillaBebe: false });
+        setStartDate(null);
+      } catch (err) {
+        alert("Error al enviar la reserva por WhatsApp. Inténtalo de nuevo.");
+      } finally {
+        setIsSending(false);
+      }
     }
   };
 
@@ -239,8 +250,8 @@ const ReservationPage = () => {
             </div>
 
             <div className="space-y-4 pt-4">
-              <button type="submit" className="w-full bg-yellow-500 text-black font-bold py-5 rounded-lg uppercase tracking-[0.3em] text-sm hover:bg-yellow-400 transition-all shadow-lg active:scale-[0.99]">
-                Confirmar Reserva
+              <button type="submit" disabled={isSending} className={`w-full bg-yellow-500 text-black font-bold py-5 rounded-lg uppercase tracking-[0.3em] text-sm hover:bg-yellow-400 transition-all shadow-lg active:scale-[0.99] ${isSending ? 'opacity-50 cursor-not-allowed' : ''}`}>
+                {isSending ? 'Enviando...' : 'Confirmar Reserva'}
               </button>
               
               {/* Aviso Grupos Grandes */}
