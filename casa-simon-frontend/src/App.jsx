@@ -27,6 +27,8 @@ const LazyPostLocales = lazy(() => import('./components/blog-posts/PostLocales')
 const LazyPostDomicilio = lazy(() => import('./components/blog-posts/PostDomicilio'));
 const LazyPostAlmuerzos = lazy(() => import('./components/blog-posts/PostAlmuerzos'));
 const LazyPostPostres = lazy(() => import('./components/blog-posts/PostPostres'));
+const LazyReserva = lazy(() => import('./components/ReservationForm'));
+
 
 // --- TABLAS DE ALÉRGENOS ---
 const LazyAlergenosLocal = lazy(() => import('./components/AlergenosLocal'));
@@ -137,6 +139,9 @@ function App() {
           {/* RUTAS TÉCNICAS (LAS TABLAS DE ALÉRGENOS) */}
           <Route path={APP_ROUTES.ALERGENOS_PARALLEVAR} element={<LazyAlergenosLocal />} />
           <Route path={APP_ROUTES.ALERGENOS_RESTAURANTE} element={<LazyAlergenosRestaurante />} />
+
+          <Route path={APP_ROUTES.RESERVA_RESTAURANTE} element={<LazyReserva />} />
+
 
         </Routes>
       </Suspense>

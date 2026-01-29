@@ -1,9 +1,8 @@
 import React from 'react';
 
 export default function Privacidad() {
-    // Estilos reutilizables (mismos que en Aviso Legal)
+    // Estilos reutilizables
     const sectionTitle = "text-xl md:text-2xl font-bold text-yellow-400 mb-4 mt-8";
-    const subTitle = "text-lg font-semibold text-white mb-2 mt-4";
     const paragraph = "text-gray-400 text-sm md:text-base leading-relaxed mb-4";
     const listStyle = "list-disc pl-5 text-gray-400 space-y-2 mb-4 text-sm md:text-base";
 
@@ -16,88 +15,49 @@ export default function Privacidad() {
                     Política de Privacidad
                 </h1>
                 <p className="text-sm text-gray-500 mb-8">
-                    Última actualización: {new Date().getFullYear()}
+                    Vigente desde: {new Date().getFullYear()}
                 </p>
 
                 <div className="bg-gray-900 p-6 md:p-10 rounded-xl shadow-lg border border-gray-800">
                     
                     <p className={paragraph}>
-                        En <strong>Casa Simón</strong> nos tomamos muy en serio la privacidad de tus datos. Esta Política de Privacidad describe cómo recopilamos, usamos y protegemos la información personal que nos proporcionas a través de nuestro sitio web y servicios.
+                        En <strong>Casa Simón</strong> respetamos tu privacidad. Esta política explica de forma sencilla cómo tratamos la información en nuestro sitio web.
                     </p>
 
-                    {/* 1. RESPONSABLE */}
-                    <h2 className={sectionTitle}>1. Responsable del Tratamiento</h2>
+                    {/* 1. QUÉ RECOPILAMOS */}
+                    <h2 className={sectionTitle}>1. Uso de la información</h2>
                     <p className={paragraph}>
-                        ¿Quién es el responsable del tratamiento de tus datos?
+                        Nuestra web tiene como finalidad principal mostrar nuestra carta y facilitar el contacto. Solo recopilamos datos personales cuando tú nos los facilitas voluntariamente para:
                     </p>
                     <ul className={listStyle}>
-                        <li><strong className="text-white">Identidad:</strong> [NOMBRE DE LA EMPRESA O AUTÓNOMO]</li>
-                        <li><strong className="text-white">CIF/NIF:</strong> [TU CIF O DNI AQUÍ]</li>
-                        <li><strong className="text-white">Dirección:</strong> [DIRECCIÓN COMPLETA DE UN LOCAL]</li>
-                        <li><strong className="text-white">Email:</strong> nicolaswer11@gmail.com</li> {/* He puesto el del footer, cámbialo si tienes uno corporativo */}
+                        <li>Gestionar una <strong>reserva</strong> (nombre, fecha y teléfono).</li>
+                        <li>Preparar un <strong>pedido para llevar</strong>.</li>
+                        <li>Responder a tus consultas a través de WhatsApp o correo electrónico.</li>
                     </ul>
-
-                    {/* 2. FINALIDAD */}
-                    <h2 className={sectionTitle}>2. Finalidad del tratamiento</h2>
                     <p className={paragraph}>
-                        ¿Para qué usamos tus datos personales? En Casa Simón tratamos la información que nos facilitan las personas interesadas con las siguientes finalidades:
-                    </p>
-                    <ul className={listStyle}>
-                        <li><strong>Gestión de Reservas:</strong> Para tramitar tu solicitud de mesa en nuestros restaurantes.</li>
-                        <li><strong>Pedidos Para Llevar:</strong> Para gestionar los encargos de comida y la recogida en el local seleccionado (Altabix o Congresos).</li>
-                        <li><strong>Atención al Cliente:</strong> Para contestar a las dudas, consultas o sugerencias que nos envíes a través del correo electrónico o formularios de contacto.</li>
-                        <li><strong>Mejora del servicio:</strong> Analizar la usabilidad de la web para mejorar la experiencia de usuario (cookies analíticas).</li>
-                    </ul>
-                    <p className="text-yellow-500 text-sm font-semibold mt-2">
-                        * No se tomarán decisiones automatizadas ni perfiles comerciales con tus datos sin tu consentimiento explícito.
+                        Estos datos se utilizan <strong>únicamente</strong> para prestarte el servicio solicitado. No creamos perfiles publicitarios ni vendemos tus datos a terceros.
                     </p>
 
-                    {/* 3. LEGITIMACIÓN */}
-                    <h2 className={sectionTitle}>3. Legitimación</h2>
+                    {/* 2. COOKIES */}
+                    <h2 className={sectionTitle}>2. Cookies y Navegación</h2>
                     <p className={paragraph}>
-                        La base legal para el tratamiento de tus datos es:
-                    </p>
-                    <ul className={listStyle}>
-                        <li>
-                            <strong>La ejecución de un contrato:</strong> Al realizar una reserva o un pedido de comida para llevar.
-                        </li>
-                        <li>
-                            <strong>El consentimiento del usuario:</strong> Al escribirnos un email o aceptar las cookies, nos das permiso para tratar tus datos para esa finalidad concreta. Puedes retirar este consentimiento en cualquier momento.
-                        </li>
-                    </ul>
-
-                    {/* 4. DESTINATARIOS */}
-                    <h2 className={sectionTitle}>4. Destinatarios de los datos</h2>
-                    <p className={paragraph}>
-                        ¿A quién se comunicarán tus datos?
-                    </p>
-                    <p className={paragraph}>
-                        Tus datos no se cederán a terceros salvo obligación legal (Hacienda, Jueces y Tribunales...) o a proveedores tecnológicos necesarios para el funcionamiento de la web (Hosting, plataforma de reservas, Google Analytics), los cuales cumplen con la normativa de protección de datos vigente.
+                        Este sitio web puede utilizar cookies propias o de terceros (como Google Analytics) para mejorar la experiencia de navegación y obtener estadísticas anónimas de visita. Al navegar por la web, aceptas el uso de estas cookies. Puedes desactivarlas en cualquier momento desde la configuración de tu navegador.
                     </p>
 
-                    {/* 5. DERECHOS */}
-                    <h2 className={sectionTitle}>5. Tus Derechos</h2>
+                    {/* 3. TERCEROS */}
+                    <h2 className={sectionTitle}>3. Servicios de Terceros</h2>
                     <p className={paragraph}>
-                        Como usuario, tienes derecho a controlar tus datos. Puedes ejercer los siguientes derechos escribiéndonos al email de contacto:
-                    </p>
-                    <ul className={listStyle}>
-                        <li><strong>Acceso:</strong> Saber qué datos tenemos sobre ti.</li>
-                        <li><strong>Rectificación:</strong> Corregir datos erróneos (ej. si cambias de teléfono).</li>
-                        <li><strong>Supresión (Derecho al olvido):</strong> Pedir que borremos tus datos cuando ya no sean necesarios.</li>
-                        <li><strong>Oposición:</strong> Oponerte a que usemos tus datos para fines concretos.</li>
-                        <li><strong>Portabilidad:</strong> Recibir tus datos en un formato estructurado.</li>
-                    </ul>
-
-                    {/* 6. SEGURIDAD */}
-                    <h2 className={sectionTitle}>6. Seguridad de los datos</h2>
-                    <p className={paragraph}>
-                        Casa Simón ha adoptado las medidas técnicas y organizativas necesarias para garantizar la seguridad de los datos de carácter personal y evitar su alteración, pérdida, tratamiento o acceso no autorizado, habida cuenta del estado de la tecnología.
+                        Para funcionalidades específicas, como la ubicación en mapas o el envío de reservas por WhatsApp, utilizamos servicios externos (Google Maps, WhatsApp API). El uso de estas herramientas se rige por sus propias políticas de privacidad.
                     </p>
 
-                    {/* 7. MENORES */}
-                    <h2 className={sectionTitle}>7. Menores de edad</h2>
+                    {/* 4. TUS DERECHOS */}
+                    <h2 className={sectionTitle}>4. Tus Derechos y Contacto</h2>
                     <p className={paragraph}>
-                        Nuestra web no está dirigida a menores de 14 años. Si eres menor de esa edad, no debes facilitarnos tus datos personales sin el consentimiento de tus padres o tutores legales.
+                        Siempre eres dueño de tus datos. Si deseas consultar, modificar o eliminar cualquier información que nos hayas facilitado previamente, puedes hacerlo contactando con nosotros directamente a través de los medios disponibles en nuestra sección de contacto (teléfono o en el propio local).
+                    </p>
+
+                    <p className="text-yellow-500 text-sm font-semibold mt-6 pt-4 border-t border-gray-800">
+                        Casa Simón se reserva el derecho a modificar esta política para adaptarla a novedades legislativas o cambios en el funcionamiento de la web.
                     </p>
 
                 </div>

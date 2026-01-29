@@ -109,7 +109,7 @@ export default function PostLocales() {
                     {/* --- IMAGEN INTERMEDIA (GUISO/CASERO) --- */}
                     <figure className="my-10 relative">
                         <img 
-                            src="https://images.unsplash.com/photo-1547592180-85f173990554?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+                            src="/BlogImg/Costra.webp" 
                             alt="Plato de comida casera caliente servido tradicionalmente"
                             className="w-full rounded-xl shadow-lg border border-gray-800"
                         />

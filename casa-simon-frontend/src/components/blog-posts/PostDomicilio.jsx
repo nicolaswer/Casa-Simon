@@ -6,7 +6,7 @@ import { APP_ROUTES } from '../../config/routes';
 export default function PostDomicilio() {
     
     // FOTO PRINCIPAL: Una paella espectacular que invite a pedirla
-const heroImage = "https://images.unsplash.com/photo-1560706834-bed1cad34c4b?q=80&w=1600&auto=format&fit=crop";
+const heroImage = "/BlogImg/PaellaDomicilio.webp";
     // DATOS ESTRUCTURADOS (JSON-LD) PARA GOOGLE
     const jsonLd = {
         "@context": "https://schema.org",
@@ -98,7 +98,7 @@ const heroImage = "https://images.unsplash.com/photo-1560706834-bed1cad34c4b?q=8
                     {/* IMAGEN INTERMEDIA */}
                     <figure className="my-10 relative">
                         <img 
-                            src="https://images.unsplash.com/photo-1515443961218-a51367888e4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+                            src="/BlogImg/PaellaEnCasa.webp" 
                             alt="Primer plano de una paella de arroz a banda"
                             className="w-full rounded-xl shadow-lg border border-gray-800"
                         />

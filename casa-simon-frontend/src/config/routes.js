@@ -24,6 +24,7 @@ export const APP_ROUTES = {
     BLOG_POST_POSTRES: '/blog/postres-caseros-tarta-elche',
     ALERGENOS_PARALLEVAR: '/alergenos-local', 
     ALERGENOS_RESTAURANTE: '/alergenos-restaurante',
+    RESERVA_RESTAURANTE: '/reservar',
 
 
 

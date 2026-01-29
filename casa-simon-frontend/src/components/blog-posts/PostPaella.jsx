@@ -92,7 +92,7 @@ export default function PostPaella() {
                     {/* --- IMAGEN INTERMEDIA (FOTO 2: OTRA PAELLA ESPECTACULAR) --- */}
                     <figure className="my-10 relative">
                         <img 
-                            src="https://images.unsplash.com/photo-1515443961218-a51367888e4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+                            src="/BlogImg/PaellaRestaurante.webp" 
                             alt="Arroz con costra y paella recién hecha en Casa Simón"
                             className="w-full rounded-xl shadow-lg border border-gray-800"
                         />
@@ -126,7 +126,7 @@ export default function PostPaella() {
     className="bg-yellow-500 text-black font-bold py-2 px-6 rounded hover:bg-white transition-colors text-center"
 >                                Ver Carta Restaurante
                             </Link>
-                            <Link to={APP_ROUTES.CONTACTO} className="border border-white text-white font-bold py-2 px-6 rounded hover:bg-white hover:text-black transition-colors text-center">
+                            <Link to={APP_ROUTES.RESERVA_RESTAURANTE} className="border border-white text-white font-bold py-2 px-6 rounded hover:bg-white hover:text-black transition-colors text-center">
                                 Reservar Ahora
                             </Link>
                         </div>

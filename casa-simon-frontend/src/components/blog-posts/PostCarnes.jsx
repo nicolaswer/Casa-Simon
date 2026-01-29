@@ -98,7 +98,7 @@ export default function PostCarnes() {
                     {/* --- IMAGEN INTERMEDIA (FOTO 2: CHULETAS CORDERO) --- */}
                     <figure className="my-10 relative">
                         <img 
-                            src="https://images.unsplash.com/photo-1615937657715-bc7b4b7962c1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+                            src="/BlogImg/ChuletasCordero.webp" 
                             alt="Plato de chuletas de cordero a la brasa recién hechas"
                             className="w-full rounded-xl shadow-lg border border-gray-800"
                         />
@@ -142,7 +142,7 @@ export default function PostCarnes() {
     className="bg-transparent border border-white text-white font-bold py-3 px-8 rounded-lg hover:bg-white hover:text-black transition-colors"
 >                                Ver Carta Restaurante
                             </Link>
-                            <Link to={APP_ROUTES.RESERVAR} className="bg-transparent border border-white text-white font-bold py-3 px-8 rounded-lg hover:bg-white hover:text-black transition-colors">
+                            <Link to={APP_ROUTES.RESERVA_RESTAURANTE} className="bg-transparent border border-white text-white font-bold py-3 px-8 rounded-lg hover:bg-white hover:text-black transition-colors">
                                 Reservar Ahora
                             </Link>
                         </div>

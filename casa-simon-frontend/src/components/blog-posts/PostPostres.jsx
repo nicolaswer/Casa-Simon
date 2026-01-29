@@ -6,7 +6,7 @@ import { APP_ROUTES } from '../../config/routes';
 export default function PostPostres() {
     
     // FOTO PRINCIPAL: Tarta de almendra (estilo Tarta de Elche)
-    const heroImage = "https://images.unsplash.com/photo-1576618148400-f54bed99fcf8?q=80&w=1600&auto=format&fit=crop";
+    const heroImage = "/BlogImg/TartaAlmendra.webp";
 
     // DATOS ESTRUCTURADOS (JSON-LD)
     const jsonLd = {
@@ -139,7 +139,7 @@ export default function PostPostres() {
                     {/* IMAGEN INTERMEDIA */}
                     <figure className="my-10 relative">
                         <img 
-                            src="https://images.unsplash.com/photo-1551024601-569d6f46e2a7?q=80&w=1200&auto=format&fit=crop" 
+                            src="/BlogImg/PostresVariados.webp" 
                             alt="Postres caseros variados en mesa de restaurante"
                             className="w-full rounded-xl shadow-lg border border-gray-800"
                         />
@@ -168,7 +168,7 @@ export default function PostPostres() {
                         <p className="text-gray-400 mb-6">Guarda hueco para el postre. Te prometemos que merece la pena.</p>
                         
                         <div className="flex flex-col sm:flex-row justify-center gap-4">
-                            <Link to={APP_ROUTES.CONTACTO} className="bg-pink-700 text-white font-bold py-3 px-8 rounded-lg hover:bg-pink-800 transition-colors">
+                            <Link to={APP_ROUTES.RESERVA_RESTAURANTE} className="bg-pink-700 text-white font-bold py-3 px-8 rounded-lg hover:bg-pink-800 transition-colors">
                                 Reservar Mesa
                             </Link>
                             <Link 

@@ -6,7 +6,7 @@ import { APP_ROUTES } from '../../config/routes';
 export default function PostAlmuerzos() {
     
     // FOTO PRINCIPAL
-    const heroImage = "https://images.unsplash.com/photo-1626202158925-56a644265449?q=80&w=1600&auto=format&fit=crop";
+    const heroImage = "/BlogImg/Bocadillos.webp";
 
     // DATOS ESTRUCTURADOS (JSON-LD)
     const jsonLd = {
@@ -173,7 +173,7 @@ export default function PostAlmuerzos() {
                     {/* IMAGEN INTERMEDIA */}
                     <figure className="my-10 relative">
                         <img 
-                            src="https://images.unsplash.com/photo-1625937759420-26d7e003e04c?q=80&w=1200&auto=format&fit=crop" 
+                            src="/BlogImg/Calamares.webp" 
                             alt="Cerveza bien fría y ensalada fresca en mesa"
                             className="w-full rounded-xl shadow-lg border border-gray-800"
                         />
