@@ -29,7 +29,7 @@ const blogPosts = [
         category: "Brasería",
         title: "Carnes a la Brasa: El punto perfecto",
         excerpt: "Chuletones, entrecots y las mejores piezas seleccionadas. Te contamos cómo tratamos el producto en nuestras parrillas para conseguir esa textura tierna y ahumada.",
-        image: "https://images.unsplash.com/photo-1600891964092-4316c288032e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        image:"/BlogImg/Chuleton.webp",
         link: APP_ROUTES.BLOG_POST_CARNES
     },
     {

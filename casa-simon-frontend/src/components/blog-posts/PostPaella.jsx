@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { APP_ROUTES } from '../../config/routes';
 
 // IMAGEN PRINCIPAL (HERO) - RÚSTICA
-const heroImage = "https://images.unsplash.com/photo-1623961990059-28356e226a77?q=80&w=1600&auto=format&fit=crop";
+const heroImage = "/BlogImg/PaellaMarisco.webp";
 
 export default function PostPaella() {
     

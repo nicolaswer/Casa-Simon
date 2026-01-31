@@ -10,7 +10,7 @@ export default function PostLocales() {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
         "headline": "Comida Casera para Llevar en Elche: Altabix y Congresos",
-        "image": "https://images.unsplash.com/photo-1543339308-43e59d6b73a6", // Foto de comida casera
+        "image": "/BlogImg/ParaLlevarCasaSimon.webp", // Foto de comida casera
         "author": {
             "@type": "Organization",
             "name": "Casa Simón"
@@ -38,7 +38,7 @@ export default function PostLocales() {
                 {/* Open Graph */}
                 <meta property="og:title" content="Comida Casera: Del fuego a tu mesa en minutos" />
                 <meta property="og:description" content="Guisos, pastas y asados listos para recoger en Altabix y Congresos." />
-                <meta property="og:image" content="https://images.unsplash.com/photo-1543339308-43e59d6b73a6" />
+                <meta property="og:image" content="/BlogImg/Costra.webp"  />
                 <meta property="og:type" content="article" />
                 
                 <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
@@ -50,7 +50,7 @@ export default function PostLocales() {
                 {/* --- HERO IMAGE (COMIDA CASERA VARIADA) --- */}
                 <div className="w-full h-[50vh] relative mb-12 group">
                     <img 
-                        src="https://images.unsplash.com/photo-1543339308-43e59d6b73a6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" 
+                        src="/BlogImg/ParaLlevarCasaSimon.webp"
                         alt="Mostrador con variedad de comida casera para llevar en tuppers" 
                         className="w-full h-full object-cover opacity-80"
                     />

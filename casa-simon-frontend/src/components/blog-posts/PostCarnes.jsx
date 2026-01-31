@@ -10,7 +10,7 @@ export default function PostCarnes() {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
         "headline": "Carnes a la Brasa en Elche: El secreto del fuego",
-        "image": "https://images.unsplash.com/photo-1600891964092-4316c288032e", 
+        "image": "/BlogImg/Chuleton.webp", 
         "author": {
             "@type": "Organization",
             "name": "Casa Simón"
@@ -38,7 +38,7 @@ export default function PostCarnes() {
                 {/* Open Graph */}
                 <meta property="og:title" content="Carnes a la Brasa: El punto perfecto en Casa Simón" />
                 <meta property="og:description" content="Chuletón, Cordero y Pollo de campo. Sin secretos, solo fuego y buen producto." />
-                <meta property="og:image" content="https://images.unsplash.com/photo-1600891964092-4316c288032e" />
+                <meta property="og:image" content="/BlogImg/Chuleton.webp" />
                 <meta property="og:type" content="article" />
                 
                 <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
@@ -50,7 +50,7 @@ export default function PostCarnes() {
                 {/* --- HERO IMAGE (FOTO 1: CHULETÓN) --- */}
                 <div className="w-full h-[50vh] relative mb-12 group">
                     <img 
-                        src="https://images.unsplash.com/photo-1600891964092-4316c288032e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" 
+                        src="/BlogImg/Chuleton.webp" 
                         alt="Chuletón de carne cocinándose en parrilla con fuego vivo en Casa Simón Elche" 
                         className="w-full h-full object-cover opacity-80"
                     />
