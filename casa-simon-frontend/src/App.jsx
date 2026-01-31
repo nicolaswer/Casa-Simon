@@ -28,6 +28,7 @@ const LazyPostDomicilio = lazy(() => import('./components/blog-posts/PostDomicil
 const LazyPostAlmuerzos = lazy(() => import('./components/blog-posts/PostAlmuerzos'));
 const LazyPostPostres = lazy(() => import('./components/blog-posts/PostPostres'));
 const LazyReserva = lazy(() => import('./components/ReservationForm'));
+const LazyReservaPaella = lazy(() => import('./components/PaellaForm'));
 
 
 // --- TABLAS DE ALÉRGENOS ---
@@ -77,6 +78,7 @@ function App() {
           {/* HOME Y RESERVAS */}
           <Route path={APP_ROUTES.HOME} element={<LazyHome />} />
           <Route path={APP_ROUTES.RESERVA_RESTAURANTE} element={<LazyReserve />} />
+          <Route path={APP_ROUTES.RESERVA_PAELLA} element={<LazyReservaPaella />} />
 
           {/* 1. CARTA RESTAURANTE (Usa el Wrapper de arriba) */}
           <Route 

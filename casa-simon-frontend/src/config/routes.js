@@ -25,6 +25,7 @@ export const APP_ROUTES = {
     ALERGENOS_PARALLEVAR: '/alergenos-local', 
     ALERGENOS_RESTAURANTE: '/alergenos-restaurante',
     RESERVA_RESTAURANTE: '/reservar',
+    RESERVA_PAELLA: '/reservarPaella'
 
 
 

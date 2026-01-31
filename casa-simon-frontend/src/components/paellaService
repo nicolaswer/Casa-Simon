@@ -1,0 +1,40 @@
+// src/services/paellaService.js
+
+const CONFIG = {
+  TELEFONO_RESTAURANTE: "34603421647" 
+};
+
+export const enviarPedidoPaella = (data, date) => {
+  // 1. Formateo manual de fecha (DD/MM/YYYY) para evitar errores regionalistas
+  const dia = String(date.getDate()).padStart(2, '0');
+  const mes = String(date.getMonth() + 1).padStart(2, '0');
+  const año = date.getFullYear();
+  const fechaStr = `${dia}/${mes}/${año}`;
+
+  // 2. Construimos el bloque de las paellas dinámicamente
+  let bloquePaellas = "";
+  data.paellas.forEach((p, index) => {
+    bloquePaellas += `\n *Paella ${index + 1}:* ${p.tipo}\n *Raciones:* ${p.raciones}${p.modificaciones ? `\n *Notas:* ${p.modificaciones}` : ''}\n`;
+  });
+
+  // 3. Construimos el mensaje final incluyendo el nuevo campo "Piso"
+  const mensaje = 
+    ` *NUEVO PEDIDO PAELLA A DOMICILIO*\n` +
+    `--------------------------\n` +
+    ` *Cliente:* ${data.nombre}\n` +
+    ` *Teléfono:* ${data.telefono.replace(/\s+/g, '')}\n` +
+    ` *Dirección:* ${data.calle}, Nº${data.numero}\n` +
+    ` *Piso/Timbre:* ${data.piso || 'No indicado'}\n` + // Nuevo campo agregado
+    ` *Notas:* ${data.timbre || 'Sin notas'}\n` +
+    ` *Entrega:* ${fechaStr} a las ${data.hora}\n` +
+    `--------------------------` +
+    bloquePaellas +
+    `--------------------------`;
+
+  // 4. Codificación y Apertura
+  const mensajeCodificado = encodeURIComponent(mensaje);
+  const urlWhatsApp = `https://wa.me/${CONFIG.TELEFONO_RESTAURANTE}?text=${mensajeCodificado}`;
+
+  window.open(urlWhatsApp, '_blank');
+  return { success: true };
+};
