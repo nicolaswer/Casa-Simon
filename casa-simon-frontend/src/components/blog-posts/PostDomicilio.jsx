@@ -134,7 +134,7 @@ const heroImage = "/BlogImg/PaellaDomicilio.webp";
                         <div className="flex flex-col gap-4 md:gap-6">
                             {/* BOTÓN 1: RESERVAR (LLAMADA A LA ACCIÓN DIRECTA) */}
                             <Link 
-                                to={APP_ROUTES.CONTACTO} 
+                                to={APP_ROUTES.RESERVA_PAELLA} 
                                 className="group relative w-full flex justify-center py-4 px-4 border border-transparent text-lg font-bold rounded-lg text-black bg-yellow-500 hover:bg-yellow-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500 transition-all uppercase tracking-wider"
                             >
                                 <span className="absolute left-0 inset-y-0 flex items-center pl-3">

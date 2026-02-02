@@ -16,6 +16,11 @@ export const paellasDomicilioData = {
           "nombre": "Fianza Paellera (Reembolsable)", 
           "precio": "20.00", 
           "ingredientes": "Se abona por el recipiente metálico. Te devolvemos los 20€ al entregar la paellera limpia en cualquiera de nuestros locales." 
+        },
+        { 
+          "nombre": "Fianza Arroz con Costra (Reembolsable)", 
+          "precio": "4.00", 
+          "ingredientes": "Se abona por el recipiente de arroz con costra. Te devolvemos los 4€ al entregar el recipiente en cualquiera de nuestros locales." 
         }
       ]
     },
@@ -28,7 +33,7 @@ export const paellasDomicilioData = {
         { "nombre": "Paella de pollo de campo y conejo", "precio": "15.15" },
         { "nombre": "Paella de verdura y magra", "precio": "15.15" },
         { "nombre": "Paella a banda", "precio": "15.15", "alergenos": ["crustaceos", "moluscos", "pescados"] },
-        { "nombre": "Arroz con Costra (Típico Ilicitano)", "precio": "16.50", "alergenos": ["huevos", "gluten"] },
+        { "nombre": "Arroz con Costra (Típico Ilicitano)", "precio": "22.00", "alergenos": ["huevos", "gluten"] },
         { "nombre": "Fideuá a la leña", "precio": "15.15", "alergenos": ["gluten", "pescados"] }
       ]
     },

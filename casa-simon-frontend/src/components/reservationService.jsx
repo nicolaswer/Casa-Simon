@@ -1,8 +1,8 @@
 // src/services/whatsappService.js
 
 const CONFIG = {
-  // Solo números, sin el "+" para evitar errores de codificación en la URL
-  TELEFONO_RESTAURANTE: "34603421647" 
+  // Solo números, sin el "+" para evitar errores de codificación en la URL 34671401536" 
+  TELEFONO_RESTAURANTE: "34671401536" 
 };
 
 export const enviarReservaWhatsApp = (data, date) => {

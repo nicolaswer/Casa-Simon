@@ -142,7 +142,6 @@ function App() {
           <Route path={APP_ROUTES.ALERGENOS_PARALLEVAR} element={<LazyAlergenosLocal />} />
           <Route path={APP_ROUTES.ALERGENOS_RESTAURANTE} element={<LazyAlergenosRestaurante />} />
 
-          <Route path={APP_ROUTES.RESERVA_RESTAURANTE} element={<LazyReserva />} />
 
 
         </Routes>

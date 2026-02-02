@@ -1,7 +1,7 @@
 // src/services/paellaService.js
 
 const CONFIG = {
-  TELEFONO_RESTAURANTE: "34603421647" 
+  TELEFONO_RESTAURANTE: "34671401536" 
 };
 
 export const enviarPedidoPaella = (data, date) => {
